@@ -1,0 +1,42 @@
+---
+layout: base.njk
+title: Nieuws – Oikos Bouwend Bureau
+permalink: /nieuws/
+---
+<main class="pt-32 pb-28 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="section-tag">Alle updates</span>
+      <h1 class="text-4xl font-extrabold text-oikos-dark">Nieuws &amp; projecten</h1>
+      <p class="text-oikos-gray mt-4 text-lg max-w-xl mx-auto">Lees hier meer over onze projecten, materialen en inzichten rondom duurzame renovatie.</p>
+    </div>
+
+    {%- set allePosts = collections.post | reverse -%}
+    {% if allePosts.length > 0 %}
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      {% for post in allePosts %}
+      <article class="card-hover group cursor-pointer">
+        <a href="{{ post.url }}" class="block">
+          <div class="overflow-hidden rounded-2xl mb-5 aspect-video bg-oikos-green-light">
+            {% if post.data.image %}
+            <img src="{{ post.data.image }}" alt="{{ post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            {% else %}
+            <div class="w-full h-full flex items-center justify-center">
+              <img src="/assets/logo-hart.png" alt="Oikos" class="h-16 opacity-30" />
+            </div>
+            {% endif %}
+          </div>
+          <p class="text-oikos-green text-xs font-bold tracking-widest uppercase mb-2">
+            {{ post.data.category or "Nieuws" }} · {{ post.date | dutchDate }}
+          </p>
+          <h2 class="text-lg font-bold text-oikos-dark mb-2 group-hover:text-oikos-green transition-colors leading-snug">{{ post.data.title }}</h2>
+          <p class="text-oikos-gray text-sm leading-relaxed">{{ post.data.excerpt or post.templateContent | striptags | truncate(120) }}</p>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="text-oikos-gray text-center py-16">Er zijn nog geen berichten. Voeg ze toe via <a href="/admin/" class="text-oikos-green underline">het admin-panel</a>.</p>
+    {% endif %}
+  </div>
+</main>

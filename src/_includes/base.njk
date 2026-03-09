@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="nl" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title or "Oikos – Bouwend Bureau | Den Haag" }}</title>
+  <meta name="description" content="{{ description or 'Duurzame renovatie met hennepvezels. Wij maken woningen klaar voor 2050.' }}" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'oikos-green':       '#8DC63F',
+            'oikos-green-dark':  '#72A832',
+            'oikos-green-light': '#EFF7DC',
+            'oikos-dark':        '#3C3C3C',
+            'oikos-gray':        '#6B6B6B',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+          },
+        },
+      },
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    html { scroll-behavior: smooth; }
+    .hero-overlay {
+      background: linear-gradient(105deg, rgba(60,60,60,0.88) 40%, rgba(60,60,60,0.35) 100%);
+    }
+    .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .card-hover:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.10); }
+    .section-tag {
+      display: block;
+      color: #8DC63F;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+  </style>
+</head>
+<body class="bg-white text-oikos-dark font-sans antialiased">
+
+  <!-- ===== NAVIGATIE ===== -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/96 backdrop-blur-sm border-b border-gray-100 shadow-sm">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="/">
+        <img src="/assets/logo.png" alt="Oikos Bouwend Bureau" class="h-11 w-auto" />
+      </a>
+      <div class="hidden md:flex items-center gap-8">
+        <a href="/#over-ons"  class="text-oikos-dark hover:text-oikos-green transition-colors text-sm font-medium">Over ons</a>
+        <a href="/#diensten"  class="text-oikos-dark hover:text-oikos-green transition-colors text-sm font-medium">Diensten</a>
+        <a href="/#materiaal" class="text-oikos-dark hover:text-oikos-green transition-colors text-sm font-medium">Hennepvezels</a>
+        <a href="/#projecten" class="text-oikos-dark hover:text-oikos-green transition-colors text-sm font-medium">Projecten</a>
+        <a href="/#nieuws"    class="text-oikos-dark hover:text-oikos-green transition-colors text-sm font-medium">Nieuws</a>
+        <a href="/#contact"   class="bg-oikos-green hover:bg-oikos-green-dark text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors">Contact</a>
+      </div>
+      <button id="mobile-menu-btn" class="md:hidden text-oikos-dark" aria-label="Menu">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-white border-t border-gray-100 px-6 py-4 flex flex-col gap-4 text-sm font-medium">
+      <a href="/#over-ons"  class="text-oikos-dark hover:text-oikos-green">Over ons</a>
+      <a href="/#diensten"  class="text-oikos-dark hover:text-oikos-green">Diensten</a>
+      <a href="/#materiaal" class="text-oikos-dark hover:text-oikos-green">Hennepvezels</a>
+      <a href="/#projecten" class="text-oikos-dark hover:text-oikos-green">Projecten</a>
+      <a href="/#nieuws"    class="text-oikos-dark hover:text-oikos-green">Nieuws</a>
+      <a href="/#contact"   class="bg-oikos-green text-white px-5 py-2.5 rounded-full text-center font-semibold">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ===== PAGINA-INHOUD ===== -->
+  {{ content | safe }}
+
+  <!-- ===== CTA BANNER ===== -->
+  <section class="bg-oikos-green py-20">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <h2 class="text-4xl font-extrabold text-white mb-5">Jouw woning klaar voor 2050?</h2>
+      <p class="text-white/85 text-xl mb-10 leading-relaxed max-w-2xl mx-auto">
+        Oikos werkt samen met enthousiaste woningeigenaren aan een duurzame toekomst.
+        Neem contact op voor een vrijblijvend gesprek.
+      </p>
+      <a href="/#contact" class="bg-white text-oikos-green hover:bg-gray-100 px-10 py-4 rounded-full font-bold text-base transition-colors inline-block shadow-lg">
+        Neem contact op
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer id="contact" class="bg-oikos-dark text-white py-20">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+
+        <div>
+          <div class="inline-block bg-white/10 rounded-xl p-3 mb-5">
+            <img src="/assets/logo.png" alt="Oikos Bouwend Bureau" class="h-16 w-auto" />
+          </div>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            Duurzame renovatie met hennepvezels. Wij maken woningen klaar voor de toekomst.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-5 tracking-wide text-sm uppercase">Contact</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-0.5 text-oikos-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+              Breitnerlaan 70, Den Haag
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-0.5 text-oikos-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              <a href="mailto:info@bureau-oikos.nl" class="hover:text-oikos-green transition-colors">info@bureau-oikos.nl</a>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-0.5 text-oikos-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+              KVK: 80319556
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-5 tracking-wide text-sm uppercase">Navigatie</h4>
+          <ul class="space-y-2 text-gray-400 text-sm">
+            <li><a href="/#over-ons"  class="hover:text-oikos-green transition-colors">Over Oikos</a></li>
+            <li><a href="/#diensten"  class="hover:text-oikos-green transition-colors">Diensten</a></li>
+            <li><a href="/#materiaal" class="hover:text-oikos-green transition-colors">Hennepvezels</a></li>
+            <li><a href="/#projecten" class="hover:text-oikos-green transition-colors">Projecten</a></li>
+            <li><a href="/#nieuws"    class="hover:text-oikos-green transition-colors">Nieuws</a></li>
+          </ul>
+        </div>
+
+      </div>
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-gray-500 text-xs">
+        <p>© {{ ('' | date('yyyy')) or '2025' }} Oikos, Bouwend Bureau. Alle rechten voorbehouden.</p>
+        <a href="https://www.linkedin.com/in/guido-bouwman-7ab306146/" target="_blank" rel="noopener"
+           class="flex items-center gap-2 hover:text-oikos-green transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', function() {
+      document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+# =====================================================
+# DECAP CMS CONFIGURATIE – Oikos Bouwend Bureau
+# =====================================================
+# STAP 1: Vervang [JOUW-GITHUB-NAAM] door jouw GitHub gebruikersnaam
+# STAP 2: Vervang [CLIENT_ID] door jouw GitHub OAuth App Client ID
+#          (aanmaken via github.com → Settings → Developer Settings → OAuth Apps)
+# =====================================================
+
+backend:
+  name: github
+  repo: [JOUW-GITHUB-NAAM]/oikos-website   # ← aanpassen
+  branch: main
+  auth_type: pkce
+  app_id: [CLIENT_ID]                       # ← aanpassen na OAuth App aanmaken
+
+# Waar worden media-bestanden (foto's) opgeslagen
+media_folder: "src/assets/uploads"
+public_folder: "/assets/uploads"
+
+# =====================================================
+# COLLECTIES – wat de klant kan bewerken
+# =====================================================
+collections:
+
+  # --- NIEUWSBERICHTEN (klant kan zelf aanmaken / bewerken) ---
+  - name: "posts"
+    label: "Nieuwsberichten"
+    label_singular: "Nieuwsbericht"
+    folder: "src/posts"
+    create: true
+    slug: "{{slug}}"
+    preview_path: "nieuws/{{slug}}"
+    fields:
+      - label: "Titel"
+        name: "title"
+        widget: "string"
+        hint: "De titel van het bericht"
+
+      - label: "Publicatiedatum"
+        name: "date"
+        widget: "datetime"
+        format: "YYYY-MM-DD"
+        date_format: "DD-MM-YYYY"
+        time_format: false
+        default: ""
+
+      - label: "Categorie"
+        name: "category"
+        widget: "select"
+        options:
+          - "Isolatie"
+          - "Luchtdicht bouwen"
+          - "Projecten"
+          - "Duurzaamheid"
+          - "Nieuws"
+        default: "Nieuws"
+
+      - label: "Uitgelichte afbeelding"
+        name: "image"
+        widget: "image"
+        required: false
+        hint: "Aanbevolen formaat: 1200×675px (16:9)"
+
+      - label: "Korte samenvatting"
+        name: "excerpt"
+        widget: "text"
+        required: false
+        hint: "Wordt getoond als preview-tekst op de homepage en het nieuwsoverzicht (max. ~150 tekens)"
+
+      - label: "Inhoud"
+        name: "body"
+        widget: "markdown"
+        hint: "De volledige tekst van het bericht. Gebruik ## voor tussenkopjes."
