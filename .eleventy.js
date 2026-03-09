@@ -1,7 +1,8 @@
 module.exports = function (eleventyConfig) {
-  // Kopieer assets (logo's, foto's, admin) direct naar _site
+  // Kopieer assets en admin direct naar _site (niet verwerken als template)
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/admin");
+  eleventyConfig.ignores.add("src/admin/**");
 
   // Datum-filter voor blog posts (bijv. "Januari 2025")
   eleventyConfig.addFilter("dutchDate", function (date) {
