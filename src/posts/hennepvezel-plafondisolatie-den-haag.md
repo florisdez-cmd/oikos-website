@@ -2,8 +2,10 @@
 title: Hennepvezel plafondisolatie in historische woning Den Haag
 date: 2025-01-15
 category: Isolatie
-excerpt: Een bijzonder project waarbij we een monumentale woning hebben voorzien van luchtdichte isolatie zonder het historisch karakter aan te tasten.
 image: /assets/img/oikos-2.jpg
+excerpt: >
+  Een bijzonder project waarbij we een monumentale woning hebben voorzien van
+  luchtdichte isolatie zonder het historisch karakter aan te tasten,
 ---
 
 Een bijzonder project in Den Haag waarbij we een monumentale woning uit de jaren '20 hebben gerenoveerd. Het doel: maximale energiebesparing zonder dat de woning haar historisch karakter verliest.
