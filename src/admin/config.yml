@@ -8,10 +8,10 @@
 
 backend:
   name: github
-  repo: [JOUW-GITHUB-NAAM]/oikos-website   # ← aanpassen
+  repo: florisdez-cmd/oikos-website
   branch: main
   auth_type: pkce
-  app_id: [CLIENT_ID]                       # ← aanpassen na OAuth App aanmaken
+  app_id: Ov23liKhvEKrDbLLDQAg
 
 # Waar worden media-bestanden (foto's) opgeslagen
 media_folder: "src/assets/uploads"
