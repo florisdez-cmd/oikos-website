@@ -1,17 +1,10 @@
 # =====================================================
 # DECAP CMS CONFIGURATIE – Oikos Bouwend Bureau
 # =====================================================
-# STAP 1: Vervang [JOUW-GITHUB-NAAM] door jouw GitHub gebruikersnaam
-# STAP 2: Vervang [CLIENT_ID] door jouw GitHub OAuth App Client ID
-#          (aanmaken via github.com → Settings → Developer Settings → OAuth Apps)
-# =====================================================
 
 backend:
-  name: github
-  repo: florisdez-cmd/oikos-website
+  name: git-gateway
   branch: main
-  auth_type: pkce
-  app_id: Ov23liKhvEKrDbLLDQAg
 
 # Waar worden media-bestanden (foto's) opgeslagen
 media_folder: "src/assets/uploads"
