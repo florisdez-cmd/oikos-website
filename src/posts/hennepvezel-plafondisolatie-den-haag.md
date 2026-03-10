@@ -5,7 +5,7 @@ category: Isolatie
 image: /assets/img/oikos-2.jpg
 excerpt: >
   Een bijzonder project waarbij we een monumentale woning hebben voorzien van
-  luchtdichte isolatie zonder het historisch karakter aan te tasten,
+  luchtdichte isolatie zonder het historisch karakter aan te tasten.
 ---
 
 Een bijzonder project in Den Haag waarbij we een monumentale woning uit de jaren '20 hebben gerenoveerd. Het doel: maximale energiebesparing zonder dat de woning haar historisch karakter verliest.
@@ -16,10 +16,10 @@ Monumentale woningen stellen hoge eisen aan renovaties. Bestaande details, profi
 
 ## Onze aanpak
 
-We kozen voor hennepvezelplaten aan de binnenzijde van de muren en het plafond. Deze platen zijn dun genoeg om de ruimte nauwelijks te verkleinen, maar bieden een uitstekende thermische weerstand.
+We kozen voor hennepvezelplaten aan de binnenzijde van de muren en het plafond. Deze platen zijn dun genoeg om de ruimte nauwelijks te verkleinen, maar bieden een uitstekende thermische weerstand en een hoge faseverschuiving — wat zorgt voor koelte in de zomer.
 
-Aangevuld met **SIGA Majrex dampopen folie** en zorgvuldig aangebrachte luchtdichtingstape creëerden we een volledig luchtdichte schil — essentieel voor maximale energiebesparing.
+Aangevuld met een luchtdichte detaillering op alle aansluitingen creëerden we een goed presterende schil die de woning aanzienlijk comfortabeler maakt.
 
 ## Resultaat
 
-De bewoners rapporteren een significant comfortablere woning: warmer in de winter, koeler in de zomer, en geen tocht meer. De maandelijkse energierekening daalde met ruim 40%.
+De bewoners rapporteren een significant comfortabeler woning: warmer in de winter, koeler in de zomer, en geen tocht meer. De maandelijkse energierekening daalde met ruim 40%.

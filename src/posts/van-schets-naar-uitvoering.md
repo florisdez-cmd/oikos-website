@@ -16,13 +16,13 @@ Op basis hiervan maken we een renovatieplan met bijbehorende materiaalspecificat
 
 ## Stap 2: Voorbereiding
 
-Voordat we beginnen, bestellen we alle materialen. We werken met vaste leveranciers van hennepvezelplaten, SIGA-producten en hout voor de constructie. Zo weten we zeker dat de kwaliteit klopt.
+Voordat we beginnen, bestellen we alle materialen en maken we een planning die past bij de bewoners. Zo weten we zeker dat de uitvoering soepel verloopt en de kwaliteit klopt.
 
 ## Stap 3: Uitvoering
 
 De uitvoering verloopt altijd in een vaste volgorde:
 1. Constructie bouwen (houten regelwerk)
-2. Hennepvezelplaten inbrengen
+2. Isolatieplaten inbrengen
 3. Dampopen folie aanbrengen en tapen
 4. Controleren op luchtdichtheid
 5. Afwerking
