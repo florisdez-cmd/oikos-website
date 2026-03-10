@@ -140,10 +140,10 @@ description: Duurzame renovatie met hennepvezels. Guido Bouwman maakt woningen k
       <!-- Links: uitleg + eigenschappen -->
       <div>
         <p class="text-white/70 text-lg leading-relaxed mb-4">
-          Oikos werkt met een specifieke combinatie van biobased materialen, samengesteld op basis van bouwfysica — niet op basis van marketing. De kern is <strong class="text-white">EXIE CaNaDry</strong>, een droge kalkhennep van Belgische bodem. Aangevuld met <strong class="text-white">ESB plus</strong> constructieplaten en <strong class="text-white">Gutex houtvezelplaten</strong> als buitenste isolatielaag.
+          Oikos werkt met biobased materialen, samengesteld op basis van bouwfysica — niet op basis van marketing. De kern is <strong class="text-white">EXIE CaNaDry</strong>, een droge kalkhennep van Belgische bodem.
         </p>
         <p class="text-white/50 text-sm leading-relaxed mb-10">
-          Samen met luchtdichte detaillering en een WTW-installatie leidt dit tot een energiebesparing van tot 90% op de energierekening. Alles zonder formaldehyde of andere giftige stoffen.
+          Samen met luchtdichte detaillering leidt dit tot een energiebesparing van tot 90% op de energierekening. Alles zonder formaldehyde of andere giftige stoffen.
         </p>
 
         <div class="space-y-5">
@@ -222,24 +222,6 @@ description: Duurzame renovatie met hennepvezels. Guido Bouwman maakt woningen k
             <div class="grid grid-cols-2 px-6 py-3">
               <span class="text-white/40 text-sm">Herkomst</span>
               <span class="text-white font-mono text-sm">België</span>
-            </div>
-          </div>
-          <!-- Andere materialen -->
-          <div class="border-t border-white/10 px-6 py-4">
-            <p class="text-white/30 text-xs uppercase tracking-widest mb-3">Aanvullende materialen</p>
-            <div class="space-y-2">
-              <div class="flex items-center justify-between">
-                <span class="text-white/60 text-sm">Gutex houtvezelplaat</span>
-                <span class="text-white/40 font-mono text-xs">λ 0,036 W/m·K</span>
-              </div>
-              <div class="flex items-center justify-between">
-                <span class="text-white/60 text-sm">ESB plus constructieplaat</span>
-                <span class="text-white/40 font-mono text-xs">formaldehyde &lt;0,03 ppm</span>
-              </div>
-              <div class="flex items-center justify-between">
-                <span class="text-white/60 text-sm">SIGA Majrex 200 folie</span>
-                <span class="text-white/40 font-mono text-xs">luchtdichting</span>
-              </div>
             </div>
           </div>
         </div>
@@ -332,26 +314,44 @@ description: Duurzame renovatie met hennepvezels. Guido Bouwman maakt woningen k
   </div>
 </section>
 
-<!-- ===== FOTO GRID ===== -->
-<section class="py-4 bg-white">
+<!-- ===== CONTACT ===== -->
+<section id="contact" class="py-28 bg-oikos-dark">
   <div class="max-w-6xl mx-auto px-6">
-    {% set fotos = [
-      ["oikos-10.jpg", "Wand- & plafondisolatie"],
-      ["oikos-1.jpg",  "Luchtdichte wandopbouw"],
-      ["oikos-6.jpg",  "Hennepvezelplaten"],
-      ["oikos-15.jpg", "Renovatie Den Haag"],
-      ["oikos-20.jpg", "SIGA Majrex dampfolie"],
-      ["oikos-1b.jpg", "Klaar voor 2050"]
-    ] %}
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
-      {% for f in fotos %}
-      <div class="relative group overflow-hidden rounded-2xl aspect-square">
-        <img src="/assets/img/{{ f[0] }}" alt="{{ f[1] }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-        <div class="absolute inset-0 bg-oikos-dark/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-          <p class="text-white font-semibold text-sm">{{ f[1] }}</p>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <div>
+        <span class="text-oikos-green text-xs font-bold tracking-[0.2em] uppercase mb-4 block">Contact</span>
+        <h2 class="text-4xl md:text-5xl font-extrabold text-white leading-tight mb-6">
+          Een vraag of<br>een gebouw in gedachten?
+        </h2>
+        <p class="text-white/60 text-lg leading-relaxed mb-10">
+          Vertel ons over het gebouw, de situatie en de ambitie. Dan kijken we samen wat er mogelijk is.
+        </p>
+        <a href="mailto:info@bureau-oikos.nl" class="inline-flex items-center gap-3 bg-oikos-green hover:bg-oikos-green-dark text-white font-semibold px-8 py-4 rounded-full transition-colors text-base">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          info@bureau-oikos.nl
+        </a>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+          <p class="text-3xl font-extrabold text-oikos-green mb-2">90%</p>
+          <p class="text-white/50 text-sm">energiebesparing mogelijk met de juiste aanpak</p>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+          <p class="text-3xl font-extrabold text-white mb-2">CO₂−</p>
+          <p class="text-white/50 text-sm">negatief materiaal over de volledige levenscyclus</p>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+          <p class="text-3xl font-extrabold text-white mb-2">16u</p>
+          <p class="text-white/50 text-sm">thermische faseverschuiving — koel in de zomer</p>
+        </div>
+        <div class="bg-white/5 border border-white/10 rounded-2xl p-6">
+          <p class="text-3xl font-extrabold text-oikos-green mb-2">0%</p>
+          <p class="text-white/50 text-sm">formaldehyde in alle gebruikte materialen</p>
         </div>
       </div>
-      {% endfor %}
+
     </div>
   </div>
 </section>
