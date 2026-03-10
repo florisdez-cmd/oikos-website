@@ -1,205 +1,59 @@
 ---
 layout: base.njk
 title: Oikos – Bouwend Bureau | Den Haag
-description: Duurzame renovatie met hennepvezels. Wij maken woningen klaar voor 2050.
+description: Duurzame renovatie met hennepvezels. Guido Bouwman maakt woningen klaar voor 2050.
 ---
 
 <!-- ===== HERO ===== -->
-<section id="home" class="relative min-h-screen flex items-center overflow-hidden">
+<section id="home" class="relative min-h-screen flex items-end pb-20 overflow-hidden">
   <div class="absolute inset-0">
     <img src="/assets/img/oikos-10.jpg" alt="Oikos project" class="w-full h-full object-cover" />
     <div class="hero-overlay absolute inset-0"></div>
   </div>
-  <div class="relative z-10 max-w-6xl mx-auto px-6 py-32">
-    <div class="max-w-2xl">
-      <p class="text-oikos-green font-bold tracking-widest uppercase text-xs mb-5">
-        Oikos – Bouwend Bureau &nbsp;·&nbsp; Den Haag
-      </p>
-      <h1 class="text-white text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-        Wij maken jouw woning klaar voor&nbsp;2050
-      </h1>
-      <p class="text-gray-300 text-xl leading-relaxed mb-10">
-        Duurzame renovatie met hennepvezels. Betaalbaar, gezond en toekomstbestendig —
-        met behoud van het karakter van je woning.
-      </p>
-      <div class="flex flex-wrap gap-4">
-        <a href="#projecten" class="bg-oikos-green hover:bg-oikos-green-dark text-white px-8 py-4 rounded-full font-semibold transition-colors">Bekijk onze projecten</a>
-        <a href="#over-ons"  class="border-2 border-white/70 text-white hover:bg-white hover:text-oikos-dark px-8 py-4 rounded-full font-semibold transition-all">Over Oikos</a>
-      </div>
-    </div>
-  </div>
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/50 flex flex-col items-center gap-2">
-    <span class="text-xs tracking-widest uppercase">Scroll</span>
-    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 animate-bounce" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-    </svg>
-  </div>
-</section>
 
-<!-- ===== USP BAR ===== -->
-<section class="bg-oikos-dark py-8">
-  <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-8">
-    <div class="flex items-center gap-4 text-white">
-      <div class="w-10 h-10 rounded-full bg-oikos-green flex items-center justify-center flex-shrink-0">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+  <div class="relative z-10 max-w-6xl mx-auto px-6 w-full">
+    <p class="text-oikos-green font-bold tracking-[0.2em] uppercase text-xs mb-6">
+      Oikos – Bouwend Bureau &nbsp;·&nbsp; Den Haag
+    </p>
+    <h1 class="text-white text-5xl md:text-7xl font-extrabold leading-none mb-8 max-w-3xl">
+      Gebouwd met<br>wat de aarde<br>geeft.
+    </h1>
+    <p class="text-white/70 text-xl max-w-lg mb-14 font-light leading-relaxed">
+      Renovatie met hennepvezels en luchtdichte detaillering. Voor gebouwen met karakter — en ambities voor de lange termijn.
+    </p>
+
+    <!-- Stats bar -->
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden max-w-3xl">
+      <div class="bg-black/30 backdrop-blur px-6 py-5">
+        <p class="text-3xl font-extrabold text-white">90%</p>
+        <p class="text-white/50 text-xs mt-1 uppercase tracking-widest">Energiebesparing mogelijk</p>
       </div>
-      <div><p class="font-semibold leading-tight">Volledig natuurlijk</p><p class="text-gray-400 text-sm">Hennepvezels als isolatiemateriaal</p></div>
-    </div>
-    <div class="flex items-center gap-4 text-white">
-      <div class="w-10 h-10 rounded-full bg-oikos-green flex items-center justify-center flex-shrink-0">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
+      <div class="bg-black/30 backdrop-blur px-6 py-5">
+        <p class="text-3xl font-extrabold text-oikos-green">CO₂−</p>
+        <p class="text-white/50 text-xs mt-1 uppercase tracking-widest">Negatief materiaal</p>
       </div>
-      <div><p class="font-semibold leading-tight">Luchtdicht bouwen</p><p class="text-gray-400 text-sm">Minimaal energieverbruik</p></div>
-    </div>
-    <div class="flex items-center gap-4 text-white">
-      <div class="w-10 h-10 rounded-full bg-oikos-green flex items-center justify-center flex-shrink-0">
-        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"/></svg>
+      <div class="bg-black/30 backdrop-blur px-6 py-5">
+        <p class="text-3xl font-extrabold text-white">0%</p>
+        <p class="text-white/50 text-xs mt-1 uppercase tracking-widest">Formaldehyde</p>
       </div>
-      <div><p class="font-semibold leading-tight">Karakter behouden</p><p class="text-gray-400 text-sm">Renovatie met respect voor de woning</p></div>
+      <div class="bg-black/30 backdrop-blur px-6 py-5">
+        <p class="text-3xl font-extrabold text-white">16u</p>
+        <p class="text-white/50 text-xs mt-1 uppercase tracking-widest">Thermische faseverschuiving</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== OVER ONS ===== -->
-<section id="over-ons" class="py-28 bg-white">
+<!-- ===== PROJECTEN & BLOGS – CENTRAAL ===== -->
+<section id="projecten" class="py-28 bg-white">
   <div class="max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-      <div>
-        <span class="section-tag">Over Oikos</span>
-        <h2 class="text-4xl font-extrabold text-oikos-dark leading-tight mb-6">Een bouwend bureau met een missie</h2>
-        <p class="text-oikos-gray text-lg leading-relaxed mb-5">
-          Oikos is een bouwend bureau gevestigd in Den Haag. We specialiseren ons in duurzame renovatie van bestaande woningen, met bijzondere aandacht voor isolatie met hennepvezels en luchtdicht bouwen.
-        </p>
-        <p class="text-oikos-gray text-lg leading-relaxed mb-10">
-          We geloven dat duurzaam wonen niet ten koste hoeft te gaan van comfort of het karakter van een woning. Met de juiste materialen en aanpak wordt een woning warmer, gezonder én toekomstbestendiger.
-        </p>
-        <div class="flex items-center gap-4">
-          <img src="/assets/logo-hart.png" alt="Oikos hart" class="h-12 w-12" />
-          <div>
-            <p class="font-semibold text-oikos-dark">Guido Bouwman</p>
-            <p class="text-oikos-gray text-sm">Oprichter – Oikos, Bouwend Bureau</p>
-          </div>
-        </div>
-      </div>
-      <div class="relative">
-        <img src="/assets/img/oikos-21.jpg" alt="Guido Bouwman aan het werk" class="w-full rounded-2xl object-cover shadow-2xl aspect-[4/3]" />
-        <div class="absolute -bottom-6 -left-6 bg-oikos-green text-white p-6 rounded-2xl shadow-xl">
-          <p class="text-4xl font-extrabold leading-none">2050</p>
-          <p class="text-sm mt-1 text-white/85">Klaar voor de toekomst</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ===== DIENSTEN ===== -->
-<section id="diensten" class="py-28 bg-oikos-green-light">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-16">
-      <span class="section-tag">Wat wij doen</span>
-      <h2 class="text-4xl font-extrabold text-oikos-dark">Onze diensten</h2>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      <div class="bg-white rounded-2xl p-8 card-hover shadow-sm">
-        <div class="w-14 h-14 bg-oikos-green-light rounded-xl flex items-center justify-center mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-oikos-green" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-oikos-dark mb-3">Isolatie met hennepvezels</h3>
-        <p class="text-oikos-gray leading-relaxed text-sm">Wanden, vloeren en daken isoleren met hennepvezelplaten. Ademend, duurzaam en CO₂-negatief materiaal dat het binnenklimaat sterk verbetert.</p>
-      </div>
-      <div class="bg-white rounded-2xl p-8 card-hover shadow-sm">
-        <div class="w-14 h-14 bg-oikos-green-light rounded-xl flex items-center justify-center mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-oikos-green" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-oikos-dark mb-3">Luchtdicht bouwen</h3>
-        <p class="text-oikos-gray leading-relaxed text-sm">Een goed geïsoleerde woning staat of valt met luchtdichtheid. Wij brengen dampopen folie en afdichtingstape professioneel aan voor optimale resultaten.</p>
-      </div>
-      <div class="bg-white rounded-2xl p-8 card-hover shadow-sm">
-        <div class="w-14 h-14 bg-oikos-green-light rounded-xl flex items-center justify-center mb-6">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7 text-oikos-green" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
-        </div>
-        <h3 class="text-xl font-bold text-oikos-dark mb-3">Duurzame renovatie</h3>
-        <p class="text-oikos-gray leading-relaxed text-sm">Van ontwerp tot uitvoering: we begeleiden het volledige renovatieproces. Behoud van het karakter van de woning staat daarbij altijd voorop.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== HENNEPVEZELS ===== -->
-<section id="materiaal" class="py-28 bg-white">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
-      <div class="grid grid-cols-2 gap-4">
-        <img src="/assets/img/oikos-2.jpg" alt="Hennepvezel plafond"  class="rounded-2xl object-cover w-full aspect-square shadow-md" />
-        <img src="/assets/img/oikos-5.jpg" alt="Hennepvezel detail"   class="rounded-2xl object-cover w-full aspect-square shadow-md mt-8" />
-        <img src="/assets/img/oikos-3.jpg" alt="Isolatieplaten"       class="rounded-2xl object-cover w-full aspect-square shadow-md" />
-        <img src="/assets/img/oikos-4.jpg" alt="Dampopen folie"       class="rounded-2xl object-cover w-full aspect-square shadow-md mt-8" />
-      </div>
-      <div>
-        <span class="section-tag">Het materiaal</span>
-        <h2 class="text-4xl font-extrabold text-oikos-dark leading-tight mb-6">Waarom hennepvezels?</h2>
-        <p class="text-oikos-gray text-lg leading-relaxed mb-8">
-          Hennepvezels zijn een van de meest duurzame isolatiematerialen die er bestaan. De plant groeit snel, bindt CO₂ en vergt geen pesticiden. Als isolatiemateriaal is het ademend, brandvertragend en vochtregulerend.
-        </p>
-        <ul class="space-y-4">
-          {% set punten = [
-            ["CO₂-negatief", "de plant slaat meer koolstof op dan er bij productie vrijkomt"],
-            ["Ademend materiaal", "voorkomt condensatie en schimmelvorming"],
-            ["Uitstekende Rc-waarde", "hoge thermische weerstand bij relatief geringe dikte"],
-            ["100% biologisch afbreekbaar", "geen microplastics, geen schadelijke stoffen"]
-          ] %}
-          {% for punt in punten %}
-          <li class="flex items-start gap-3">
-            <div class="w-6 h-6 rounded-full bg-oikos-green flex items-center justify-center flex-shrink-0 mt-0.5">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/></svg>
-            </div>
-            <p class="text-oikos-gray text-sm leading-relaxed">
-              <strong class="text-oikos-dark">{{ punt[0] }}</strong> — {{ punt[1] }}
-            </p>
-          </li>
-          {% endfor %}
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== PROJECTEN ===== -->
-<section id="projecten" class="py-28 bg-gray-50">
-  <div class="max-w-6xl mx-auto px-6">
-    <div class="text-center mb-16">
-      <span class="section-tag">Ons werk</span>
-      <h2 class="text-4xl font-extrabold text-oikos-dark">Projecten</h2>
-      <p class="text-oikos-gray mt-4 text-lg max-w-xl mx-auto">Een selectie van renovaties waarbij we hennepvezelisolatie en luchtdicht bouwen hebben toegepast.</p>
-    </div>
-    {% set projecten = [
-      ["oikos-10.jpg", "Wand- & plafondisolatie"],
-      ["oikos-1.jpg",  "Luchtdichte wandopbouw"],
-      ["oikos-6.jpg",  "Hennepvezelplaten"],
-      ["oikos-15.jpg", "Renovatie Den Haag"],
-      ["oikos-20.jpg", "Dampopen folie SIGA Majrex"],
-      ["oikos-1b.jpg", "Klaar voor 2050"]
-    ] %}
-    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-      {% for p in projecten %}
-      <div class="relative group overflow-hidden rounded-2xl aspect-square">
-        <img src="/assets/img/{{ p[0] }}" alt="{{ p[1] }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
-        <div class="absolute inset-0 bg-oikos-dark/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-          <p class="text-white font-semibold text-sm">{{ p[1] }}</p>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<!-- ===== NIEUWS – 11ty blog loop ===== -->
-<section id="nieuws" class="py-28 bg-white">
-  <div class="max-w-6xl mx-auto px-6">
     <div class="flex items-end justify-between mb-16">
       <div>
-        <span class="section-tag">Updates</span>
-        <h2 class="text-4xl font-extrabold text-oikos-dark">Laatste nieuws</h2>
+        <span class="section-tag">Projecten & kennis</span>
+        <h2 class="text-4xl font-extrabold text-oikos-dark leading-tight">
+          Wat we maken,<br>schrijven we op.
+        </h2>
       </div>
       <a href="/nieuws/" class="text-oikos-green hover:text-oikos-green-dark font-semibold text-sm flex items-center gap-2 transition-colors">
         Alle berichten
@@ -207,38 +61,297 @@ description: Duurzame renovatie met hennepvezels. Wij maken woningen klaar voor 
       </a>
     </div>
 
-    {%- set recentePosts = collections.post | reverse | limit(3) -%}
-    {% if recentePosts.length > 0 %}
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-      {% for post in recentePosts %}
-      <article class="card-hover group cursor-pointer">
-        <a href="{{ post.url }}" class="block">
-          <div class="overflow-hidden rounded-2xl mb-5 aspect-video bg-oikos-green-light">
-            {% if post.data.image %}
-            <img src="{{ post.data.image }}" alt="{{ post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+    {%- set allPosts = collections.post | reverse -%}
+
+    {% if allPosts.length > 0 %}
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+      <!-- Featured post – groot -->
+      {%- set featured = allPosts[0] -%}
+      <article class="lg:col-span-2 card-hover group">
+        <a href="{{ featured.url }}" class="block">
+          <div class="overflow-hidden rounded-2xl aspect-[16/9] bg-oikos-green-light mb-5">
+            {% if featured.data.image %}
+            <img src="{{ featured.data.image }}" alt="{{ featured.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
             {% else %}
             <div class="w-full h-full flex items-center justify-center">
-              <img src="/assets/logo-hart.png" alt="Oikos" class="h-16 opacity-30" />
+              <img src="/assets/logo-hart.png" alt="Oikos" class="h-16 opacity-20" />
             </div>
             {% endif %}
           </div>
-          <p class="text-oikos-green text-xs font-bold tracking-widest uppercase mb-2">
-            {{ post.data.category or "Nieuws" }} · {{ post.date | dutchDate }}
-          </p>
-          <h3 class="text-lg font-bold text-oikos-dark mb-2 group-hover:text-oikos-green transition-colors leading-snug">
-            {{ post.data.title }}
-          </h3>
-          <p class="text-oikos-gray text-sm leading-relaxed">
-            {{ post.data.excerpt or post.templateContent | striptags | truncate(120) }}
-          </p>
+          <div class="flex items-center gap-3 mb-3">
+            <span class="bg-oikos-green-light text-oikos-green text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">{{ featured.data.category or "Nieuws" }}</span>
+            <span class="text-oikos-gray text-xs">{{ featured.date | dutchDate }}</span>
+          </div>
+          <h3 class="text-2xl font-bold text-oikos-dark group-hover:text-oikos-green transition-colors leading-snug mb-3">{{ featured.data.title }}</h3>
+          <p class="text-oikos-gray leading-relaxed">{{ featured.data.excerpt }}</p>
         </a>
       </article>
-      {% endfor %}
+
+      <!-- Kleinere posts -->
+      <div class="flex flex-col gap-6">
+        {% for post in allPosts %}
+          {% if loop.index > 1 and loop.index <= 3 %}
+          <article class="card-hover group flex-1">
+            <a href="{{ post.url }}" class="block">
+              <div class="overflow-hidden rounded-xl aspect-video bg-oikos-green-light mb-4">
+                {% if post.data.image %}
+                <img src="{{ post.data.image }}" alt="{{ post.data.title }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                {% else %}
+                <div class="w-full h-full flex items-center justify-center">
+                  <img src="/assets/logo-hart.png" alt="Oikos" class="h-10 opacity-20" />
+                </div>
+                {% endif %}
+              </div>
+              <div class="flex items-center gap-2 mb-2">
+                <span class="bg-oikos-green-light text-oikos-green text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">{{ post.data.category or "Nieuws" }}</span>
+                <span class="text-oikos-gray text-xs">{{ post.date | dutchDate }}</span>
+              </div>
+              <h3 class="text-base font-bold text-oikos-dark group-hover:text-oikos-green transition-colors leading-snug">{{ post.data.title }}</h3>
+            </a>
+          </article>
+          {% endif %}
+        {% endfor %}
+      </div>
+
     </div>
     {% else %}
-    <p class="text-oikos-gray text-center py-8 col-span-3">
-      Er zijn nog geen nieuwsberichten. Voeg ze toe via <a href="/admin/" class="text-oikos-green underline">het admin-panel</a>.
+    <p class="text-oikos-gray text-center py-16">
+      Er zijn nog geen berichten. Voeg ze toe via <a href="/admin/" class="text-oikos-green underline">het admin-panel</a>.
     </p>
     {% endif %}
+
+  </div>
+</section>
+
+<!-- ===== MATERIAAL – HENNEPVEZELS ===== -->
+<section id="materiaal" class="py-28 bg-oikos-dark overflow-hidden">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="mb-16">
+      <span class="text-oikos-green text-xs font-bold tracking-[0.2em] uppercase mb-3 block">Het materiaal</span>
+      <h2 class="text-4xl md:text-5xl font-extrabold text-white leading-tight max-w-xl">
+        Hennep groeit.<br>Isoleert. Ademt.<br>En breekt af.
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+
+      <!-- Links: uitleg + eigenschappen -->
+      <div>
+        <p class="text-white/70 text-lg leading-relaxed mb-4">
+          Oikos werkt met een specifieke combinatie van biobased materialen, samengesteld op basis van bouwfysica — niet op basis van marketing. De kern is <strong class="text-white">EXIE CaNaDry</strong>, een droge kalkhennep van Belgische bodem. Aangevuld met <strong class="text-white">ESB plus</strong> constructieplaten en <strong class="text-white">Gutex houtvezelplaten</strong> als buitenste isolatielaag.
+        </p>
+        <p class="text-white/50 text-sm leading-relaxed mb-10">
+          Samen met luchtdichte detaillering en een WTW-installatie leidt dit tot een energiebesparing van tot 90% op de energierekening. Alles zonder formaldehyde of andere giftige stoffen.
+        </p>
+
+        <div class="space-y-5">
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-oikos-green/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-oikos-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <p class="text-white font-semibold">16 uur thermische faseverschuiving</p>
+              <p class="text-white/50 text-sm mt-1">CaNaDry bij 24 cm dikte vertraagt warmtedoorvoer met 16 uur — koel in de zomer, warm in de winter.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-oikos-green/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-oikos-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <p class="text-white font-semibold">Dampdoorlatend — geen vochtstapeling</p>
+              <p class="text-white/50 text-sm mt-1">Kalkhennep regelt vocht actief, wat schimmelvorming in oude constructies tegengaat — zonder dampscherm nodig.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-oikos-green/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-oikos-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <p class="text-white font-semibold">CO₂-negatief over de hele levenscyclus</p>
+              <p class="text-white/50 text-sm mt-1">Hennep bindt CO₂ tijdens de groei. Kalk herneemt CO₂ bij verharding. Het materiaal is per saldo koolstofnegatief.</p>
+            </div>
+          </div>
+          <div class="flex items-start gap-4">
+            <div class="w-8 h-8 rounded-full bg-oikos-green/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+              <svg class="w-4 h-4 text-oikos-green" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+            </div>
+            <div>
+              <p class="text-white font-semibold">Zonder formaldehyde of giftige stoffen</p>
+              <p class="text-white/50 text-sm mt-1">Alle gebruikte materialen zijn getest en vrij van schadelijke emissies — voor een gezonde woning van binnenuit.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rechts: Materiaalkaart + foto's -->
+      <div class="space-y-6">
+
+        <!-- Materiaalkaart – uniek element -->
+        <div class="border border-white/10 rounded-2xl overflow-hidden">
+          <div class="bg-oikos-green/10 border-b border-white/10 px-6 py-4 flex items-center justify-between">
+            <div>
+              <p class="text-oikos-green text-xs font-bold tracking-[0.15em] uppercase">Materiaalkaart</p>
+              <p class="text-white font-bold mt-0.5">EXIE CaNaDry — droge kalkhennep</p>
+            </div>
+            <svg class="w-5 h-5 text-oikos-green opacity-60" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg>
+          </div>
+          <div class="divide-y divide-white/5">
+            <div class="grid grid-cols-2 px-6 py-3">
+              <span class="text-white/40 text-sm">λ-waarde</span>
+              <span class="text-white font-mono text-sm">0,054 W/m·K</span>
+            </div>
+            <div class="grid grid-cols-2 px-6 py-3">
+              <span class="text-white/40 text-sm">Faseverschuiving</span>
+              <span class="text-white font-mono text-sm">16 uur (24 cm)</span>
+            </div>
+            <div class="grid grid-cols-2 px-6 py-3">
+              <span class="text-white/40 text-sm">CO₂-balans</span>
+              <span class="text-oikos-green font-mono text-sm font-bold">Negatief</span>
+            </div>
+            <div class="grid grid-cols-2 px-6 py-3">
+              <span class="text-white/40 text-sm">Dichtheid</span>
+              <span class="text-white font-mono text-sm">175 kg/m³</span>
+            </div>
+            <div class="grid grid-cols-2 px-6 py-3">
+              <span class="text-white/40 text-sm">Formaldehyde</span>
+              <span class="text-oikos-green font-mono text-sm font-bold">Geen</span>
+            </div>
+            <div class="grid grid-cols-2 px-6 py-3">
+              <span class="text-white/40 text-sm">Herkomst</span>
+              <span class="text-white font-mono text-sm">België</span>
+            </div>
+          </div>
+          <!-- Andere materialen -->
+          <div class="border-t border-white/10 px-6 py-4">
+            <p class="text-white/30 text-xs uppercase tracking-widest mb-3">Aanvullende materialen</p>
+            <div class="space-y-2">
+              <div class="flex items-center justify-between">
+                <span class="text-white/60 text-sm">Gutex houtvezelplaat</span>
+                <span class="text-white/40 font-mono text-xs">λ 0,036 W/m·K</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-white/60 text-sm">ESB plus constructieplaat</span>
+                <span class="text-white/40 font-mono text-xs">formaldehyde &lt;0,03 ppm</span>
+              </div>
+              <div class="flex items-center justify-between">
+                <span class="text-white/60 text-sm">SIGA Majrex 200 folie</span>
+                <span class="text-white/40 font-mono text-xs">luchtdichting</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Foto's -->
+        <div class="grid grid-cols-2 gap-3">
+          <div class="rounded-xl overflow-hidden aspect-square">
+            <img src="/assets/img/oikos-2.jpg" alt="Hennep isolatie" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          </div>
+          <div class="rounded-xl overflow-hidden aspect-square">
+            <img src="/assets/img/oikos-5.jpg" alt="Oikos project" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== OVER OIKOS ===== -->
+<section id="over-ons" class="py-28 bg-oikos-green-light">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+
+      <div>
+        <span class="section-tag">Wie we zijn</span>
+        <h2 class="text-4xl font-extrabold text-oikos-dark mb-6 leading-tight">
+          We bouwen niet<br>voor de subsidie.<br>Maar voor het gebouw.
+        </h2>
+        <p class="text-oikos-gray text-lg leading-relaxed mb-6">
+          Oikos is opgericht door Guido Bouwman, een vakman die gelooft dat duurzaam bouwen niet hoeft te betekenen dat je het karakter van een gebouw opoffert. Elk historisch pand heeft zijn eigen constructie, zijn eigen ademhaling. We analyseren dat eerst — voor we ook maar één plaat leggen.
+        </p>
+        <p class="text-oikos-gray leading-relaxed mb-10">
+          We werken met kleine teams, korte lijnen en materialen die we zelf door en door kennen. Geen onderaannemers die het werk overdoen. Geen compromissen op detail.
+        </p>
+        <div class="flex items-center gap-4">
+          <img src="/assets/logo-hart.png" alt="Oikos" class="h-12 opacity-70" />
+          <div>
+            <p class="font-bold text-oikos-dark">Guido Bouwman</p>
+            <p class="text-oikos-gray text-sm">Oprichter · Oikos Bouwend Bureau · Den Haag</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="rounded-2xl overflow-hidden shadow-2xl">
+          <img src="/assets/img/oikos-21.jpg" alt="Guido Bouwman aan het werk" class="w-full object-cover aspect-[4/3]" />
+        </div>
+        <div class="absolute -bottom-6 -left-6 bg-white rounded-2xl shadow-xl px-6 py-5">
+          <p class="text-4xl font-extrabold text-oikos-green leading-none">2050</p>
+          <p class="text-oikos-gray text-sm mt-1">Klaar voor de toekomst</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== WERKWIJZE ===== -->
+<section id="diensten" class="py-28 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+
+    <div class="text-center mb-20">
+      <span class="section-tag">Hoe we werken</span>
+      <h2 class="text-4xl font-extrabold text-oikos-dark">Van eerste gesprek<br>tot opgeleverd werk.</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative">
+      <!-- Verbindingslijn -->
+      <div class="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-px bg-oikos-green-light z-0"></div>
+
+      {% set stappen = [
+        { nr: "01", titel: "Intake & analyse", tekst: "We kijken naar de constructie, het gebruik en de ambities. Geen standaard offerte — maar een reëel advies op maat." },
+        { nr: "02", titel: "Materiaalplan", tekst: "Op basis van de analyse stellen we een plan op. Welke dikte, welke detaillering, hoe aansluitend op bestaand werk." },
+        { nr: "03", titel: "Uitvoering", tekst: "Kleine teams, nauwkeurig werk. Heldere communicatie over voortgang en eventuele afwijkingen van het plan." },
+        { nr: "04", titel: "Oplevering & meting", tekst: "Na oplevering meten we het resultaat. Blower door test voor luchtdichtheid, thermische inspectie op verzoek." }
+      ] %}
+
+      {% for stap in stappen %}
+      <div class="text-center relative z-10">
+        <div class="w-16 h-16 rounded-full bg-oikos-green-light border-4 border-white shadow-md flex items-center justify-center mx-auto mb-6">
+          <span class="text-oikos-green font-extrabold text-sm">{{ stap.nr }}</span>
+        </div>
+        <h3 class="font-bold text-oikos-dark mb-3">{{ stap.titel }}</h3>
+        <p class="text-oikos-gray text-sm leading-relaxed">{{ stap.tekst }}</p>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOTO GRID ===== -->
+<section class="py-4 bg-white">
+  <div class="max-w-6xl mx-auto px-6">
+    {% set fotos = [
+      ["oikos-10.jpg", "Wand- & plafondisolatie"],
+      ["oikos-1.jpg",  "Luchtdichte wandopbouw"],
+      ["oikos-6.jpg",  "Hennepvezelplaten"],
+      ["oikos-15.jpg", "Renovatie Den Haag"],
+      ["oikos-20.jpg", "SIGA Majrex dampfolie"],
+      ["oikos-1b.jpg", "Klaar voor 2050"]
+    ] %}
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+      {% for f in fotos %}
+      <div class="relative group overflow-hidden rounded-2xl aspect-square">
+        <img src="/assets/img/{{ f[0] }}" alt="{{ f[1] }}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+        <div class="absolute inset-0 bg-oikos-dark/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+          <p class="text-white font-semibold text-sm">{{ f[1] }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
 </section>
