@@ -207,7 +207,7 @@ description: Duurzame renovatie met hennepvezels. Wij maken woningen klaar voor 
       </a>
     </div>
 
-    {%- set recentePosts = collections.post | reverse | slice(0, 3) -%}
+    {%- set recentePosts = collections.post | reverse | limit(3) -%}
     {% if recentePosts.length > 0 %}
     <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
       {% for post in recentePosts %}

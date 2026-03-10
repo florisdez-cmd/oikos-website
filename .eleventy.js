@@ -10,6 +10,10 @@ module.exports = function (eleventyConfig) {
     return d.toLocaleDateString("nl-NL", { month: "long", year: "numeric" });
   });
 
+  eleventyConfig.addFilter("limit", function (array, n) {
+    return array.slice(0, n);
+  });
+
   eleventyConfig.addFilter("dutchDateFull", function (date) {
     const d = new Date(date);
     return d.toLocaleDateString("nl-NL", { day: "numeric", month: "long", year: "numeric" });
