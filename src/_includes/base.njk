@@ -42,6 +42,99 @@
       text-transform: uppercase;
       margin-bottom: 0.75rem;
     }
+
+    /* ── Hero entrance ── */
+    @keyframes heroIn {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-label { animation: heroIn 0.65s ease both; }
+    .hero-h1    { animation: heroIn 0.70s ease 0.13s both; }
+    .hero-p     { animation: heroIn 0.70s ease 0.26s both; }
+    .hero-cta   { animation: heroIn 0.70s ease 0.38s both; }
+    .hero-right { animation: heroIn 0.90s ease 0.22s both; }
+
+    /* ── Scroll fade-up ── */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(26px);
+      transition: opacity 0.65s ease, transform 0.65s ease;
+    }
+    .fade-up.in-view { opacity: 1; transform: translateY(0); }
+    .fade-up.d1 { transition-delay: 0.10s; }
+    .fade-up.d2 { transition-delay: 0.20s; }
+    .fade-up.d3 { transition-delay: 0.30s; }
+    .fade-up.d4 { transition-delay: 0.40s; }
+
+    /* ── Slide from right ── */
+    .fade-right {
+      opacity: 0;
+      transform: translateX(24px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .fade-right.in-view { opacity: 1; transform: translateX(0); }
+    .fade-right.d1 { transition-delay: 0.10s; }
+    .fade-right.d2 { transition-delay: 0.22s; }
+    .fade-right.d3 { transition-delay: 0.34s; }
+    .fade-right.d4 { transition-delay: 0.46s; }
+
+    /* ── Line draw (eenmalig, scroll-triggered) ── */
+    .line-draw {
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 1.6s cubic-bezier(0.4, 0, 0.2, 1) 0.2s;
+    }
+    .line-draw.in-view { transform: scaleX(1); }
+
+    /* ── Line loop (stap voor stap, continu) ── */
+    @keyframes lineLoop {
+      0%      { transform: scaleX(0);     }  /* start bij stap 1    */
+      14%     { transform: scaleX(0.333); }  /* aankomst stap 2     */
+      24%     { transform: scaleX(0.333); }  /* pauze bij stap 2    */
+      38%     { transform: scaleX(0.667); }  /* aankomst stap 3     */
+      48%     { transform: scaleX(0.667); }  /* pauze bij stap 3    */
+      62%     { transform: scaleX(1);     }  /* aankomst stap 4     */
+      75%     { transform: scaleX(1);     }  /* even vasthouden      */
+      75.5%   { transform: scaleX(0);     }  /* snap terug naar 1   */
+      100%    { transform: scaleX(0);     }  /* pauze voor herhaling */
+    }
+    .line-loop {
+      transform-origin: left;
+      animation: lineLoop 7s ease-in-out infinite;
+    }
+
+    /* ── Step circle pop ── */
+    .circle-pop { transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.5s ease; }
+    .fade-up .circle-pop { opacity: 0; transform: scale(0.5); }
+    .fade-up.in-view .circle-pop { opacity: 1; transform: scale(1); }
+    .fade-up.d1 .circle-pop { transition-delay: 0.22s; }
+    .fade-up.d2 .circle-pop { transition-delay: 0.35s; }
+    .fade-up.d3 .circle-pop { transition-delay: 0.48s; }
+    .fade-up.d4 .circle-pop { transition-delay: 0.61s; }
+
+    /* ── Ring pulse after circle pops in ── */
+    @keyframes ringPulse {
+      0%   { transform: scale(1);   opacity: 0.7; }
+      100% { transform: scale(2.2); opacity: 0;   }
+    }
+    .circle-ring {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      width: 5rem; height: 5rem;
+      border-radius: 9999px;
+      border: 2px solid #8DC63F;
+      opacity: 0;
+      pointer-events: none;
+    }
+    .fade-up.in-view.d1 .circle-ring { animation: ringPulse 0.8s ease-out 0.72s both; }
+    .fade-up.in-view.d2 .circle-ring { animation: ringPulse 0.8s ease-out 0.85s both; }
+    .fade-up.in-view.d3 .circle-ring { animation: ringPulse 0.8s ease-out 0.98s both; }
+    .fade-up.in-view.d4 .circle-ring { animation: ringPulse 0.8s ease-out 1.11s both; }
+
+    /* ── Step card slide-in ── */
+    .step-card { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+    .step-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(141,198,63,0.18); }
   </style>
 </head>
 <body class="bg-white text-oikos-dark font-sans antialiased">
@@ -81,7 +174,7 @@
 
   <!-- ===== CTA BANNER ===== -->
   <section class="bg-oikos-green py-20">
-    <div class="max-w-4xl mx-auto px-6 text-center">
+    <div class="max-w-4xl mx-auto px-6 text-center fade-up">
       <h2 class="text-4xl font-extrabold text-white mb-5">Jouw woning klaar voor 2050?</h2>
       <p class="text-white/85 text-xl mb-10 leading-relaxed max-w-2xl mx-auto">
         Oikos werkt samen met enthousiaste woningeigenaren aan een duurzame toekomst.
@@ -144,6 +237,32 @@
     document.getElementById('mobile-menu-btn').addEventListener('click', function() {
       document.getElementById('mobile-menu').classList.toggle('hidden');
     });
+
+    // Scroll-driven animations
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) { e.target.classList.add('in-view'); io.unobserve(e.target); }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.fade-up, .fade-right, .line-draw').forEach(el => io.observe(el));
+
+    // Count-up for stats
+    function countUp(el) {
+      const target = +el.dataset.count;
+      const suffix = el.dataset.suffix || '';
+      const dur = 1400;
+      const t0 = performance.now();
+      (function step(now) {
+        const p = Math.min((now - t0) / dur, 1);
+        const v = Math.round((1 - Math.pow(1 - p, 3)) * target);
+        el.textContent = v + suffix;
+        if (p < 1) requestAnimationFrame(step);
+      })(t0);
+    }
+    const cntObs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { countUp(e.target); cntObs.unobserve(e.target); } });
+    }, { threshold: 0.7 });
+    document.querySelectorAll('[data-count]').forEach(el => cntObs.observe(el));
   </script>
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
