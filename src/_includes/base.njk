@@ -122,7 +122,7 @@
 
   <!-- ===== NAVIGATIE ===== -->
   <nav class="fixed top-0 left-0 right-0 z-50 bg-white/96 backdrop-blur-sm">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+    <div class="max-w-6xl mx-auto px-6 py-1 md:py-4 flex items-center justify-between">
       <a href="/">
         <img src="/assets/logo-voorzijde.png" alt="Oikos Bouwend Bureau" class="h-16 w-auto" />
       </a>
@@ -225,6 +225,10 @@
         mobileMenu.classList.add('hidden');
       });
     });
+    // Sluit menu bij scrollen
+    window.addEventListener('scroll', function() {
+      mobileMenu.classList.add('hidden');
+    }, { passive: true });
 
     // Scroll-driven animations
     const io = new IntersectionObserver((entries) => {
