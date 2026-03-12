@@ -313,11 +313,27 @@ description: Duurzame renovatie met hennepvezels. Guido Bouwman maakt woningen k
       <h2 class="text-4xl font-extrabold text-oikos-dark">Van eerste gesprek<br>tot opgeleverd werk.</h2>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-0 md:gap-8 relative">
-      <!-- Achtergrondlijn (grijs) desktop -->
-      <div class="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-gray-100 z-0"></div>
-      <!-- Groene lijn die continu loopt van stap 1 naar 4 desktop -->
-      <div class="hidden md:block absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-oikos-green z-0 line-loop"></div>
+    <!-- Mobiel: 2 kolommen compacte kaartjes -->
+    <div class="grid grid-cols-2 gap-3 md:hidden">
+      {% set stappen = [
+        { nr: "01", titel: "Intake & analyse", tekst: "Constructie, gebruik en ambities in kaart." },
+        { nr: "02", titel: "Materiaalplan", tekst: "Plan op maat: dikte, detaillering, aansluiting." },
+        { nr: "03", titel: "Uitvoering", tekst: "Kleine teams, nauwkeurig werk, korte lijnen." },
+        { nr: "04", titel: "Oplevering", tekst: "Meting van het resultaat na oplevering." }
+      ] %}
+      {% for stap in stappen %}
+      <div class="bg-oikos-green-light rounded-2xl p-4 fade-up d{{ loop.index }}">
+        <span class="text-oikos-green font-extrabold text-xs block mb-2">{{ stap.nr }}</span>
+        <h3 class="font-bold text-oikos-dark text-sm mb-1">{{ stap.titel }}</h3>
+        <p class="text-oikos-gray text-xs leading-relaxed">{{ stap.tekst }}</p>
+      </div>
+      {% endfor %}
+    </div>
+
+    <!-- Desktop: 4 kolommen met animerende lijn -->
+    <div class="hidden md:grid md:grid-cols-4 gap-8 relative">
+      <div class="absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-gray-100 z-0"></div>
+      <div class="absolute top-8 left-[12.5%] right-[12.5%] h-0.5 bg-oikos-green z-0 line-loop"></div>
 
       {% set stappen = [
         { nr: "01", titel: "Intake & analyse", tekst: "We kijken naar de constructie, het gebruik en de ambities. Geen standaard offerte — maar een reëel advies op maat." },
@@ -327,23 +343,14 @@ description: Duurzame renovatie met hennepvezels. Guido Bouwman maakt woningen k
       ] %}
 
       {% for stap in stappen %}
-      <div class="relative flex md:block items-start md:text-center gap-5 md:gap-0 pb-8 md:pb-0 {% if not loop.last %}md:pb-0{% endif %} z-10 fade-up d{{ loop.index }}">
-        <!-- Verticale lijn mobiel -->
-        {% if not loop.last %}
-        <div class="md:hidden absolute left-8 top-16 bottom-0 w-0.5 bg-gray-100 -translate-x-0.5"></div>
-        <div class="md:hidden absolute left-8 top-16 h-full w-0.5 bg-oikos-green -translate-x-0.5 line-loop" style="animation-delay: {{ (loop.index0 * 1.75) }}s"></div>
-        {% endif %}
-        <div class="circle-pop w-16 h-16 rounded-full bg-oikos-green-light border-4 border-white shadow-md flex items-center justify-center flex-shrink-0 md:mx-auto md:mb-6 relative">
+      <div class="text-center relative z-10 fade-up d{{ loop.index }}">
+        <div class="circle-pop w-16 h-16 rounded-full bg-oikos-green-light border-4 border-white shadow-md flex items-center justify-center mx-auto mb-6">
           <span class="text-oikos-green font-extrabold text-sm">{{ stap.nr }}</span>
-          <div class="circle-ring"></div>
         </div>
-        <div class="pt-1 md:pt-0">
-          <h3 class="font-bold text-oikos-dark mb-2 md:mb-3">{{ stap.titel }}</h3>
-          <p class="text-oikos-gray text-sm leading-relaxed">{{ stap.tekst }}</p>
-        </div>
+        <h3 class="font-bold text-oikos-dark mb-3">{{ stap.titel }}</h3>
+        <p class="text-oikos-gray text-sm leading-relaxed">{{ stap.tekst }}</p>
       </div>
       {% endfor %}
-
     </div>
   </div>
 </section>
