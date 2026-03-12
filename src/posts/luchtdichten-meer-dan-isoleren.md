@@ -2,7 +2,7 @@
 title: Luchtdichten — meer dan alleen isoleren
 date: 2025-03-01
 image: /assets/img/oikos-luchtdicht.jpg
-excerpt: Bij het renoveren van een woning worden juist dit soort details vergeten. Een rookmelder die afgaat leert je meer over luchtdichtheid dan welk rapport ook.
+excerpt: "Bij het renoveren van een woning worden juist dit soort details vergeten. "
 ---
 
 Bij het renoveren van een woning worden juist dit soort details vergeten.
