@@ -37,17 +37,6 @@ collections:
         time_format: false
         default: ""
 
-      - label: "Categorie"
-        name: "category"
-        widget: "select"
-        options:
-          - "Isolatie"
-          - "Luchtdicht bouwen"
-          - "Projecten"
-          - "Duurzaamheid"
-          - "Nieuws"
-        default: "Nieuws"
-
       - label: "Uitgelichte afbeelding"
         name: "image"
         widget: "image"
