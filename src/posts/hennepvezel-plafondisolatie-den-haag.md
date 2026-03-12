@@ -1,25 +1,22 @@
 ---
-title: Hennepvezel plafondisolatie in historische woning Den Haag
+title: Isoleren met hennep — wat is er mogelijk?
 date: 2025-01-15
-category: Isolatie
 image: /assets/img/oikos-2.jpg
-excerpt: >
-  Een bijzonder project waarbij we een monumentale woning hebben voorzien van
-  luchtdichte isolatie zonder het historisch karakter aan te tasten.
+excerpt: Hennepvezelplaten zijn dunner dan veel mensen denken, maar leveren meer op dan standaard isolatiematerialen. Een blik op wat biobased isolatie in de praktijk betekent.
 ---
 
-Een bijzonder project in Den Haag waarbij we een monumentale woning uit de jaren '20 hebben gerenoveerd. Het doel: maximale energiebesparing zonder dat de woning haar historisch karakter verliest.
+Hennep wordt steeds vaker ingezet als isolatiemateriaal — en dat is niet zonder reden. Het materiaal isoleert goed, ademt mee met de constructie en is volledig biobased.
 
-## De uitdaging
+## Wat maakt hennep anders?
 
-Monumentale woningen stellen hoge eisen aan renovaties. Bestaande details, profielen en materialen moeten intact blijven. Tegelijkertijd moest de woning voldoen aan moderne isolatienormen.
+Conventionele isolatie houdt warmte tegen, maar regelt vocht niet actief. Hennep doet dat wel. Het neemt vocht op en geeft het weer af, waardoor de kans op vochtproblemen in oude constructies kleiner wordt.
 
-## Onze aanpak
+Daarnaast heeft hennep een hoge thermische massa. Dat betekent dat warmte vertraagd wordt doorgegeven — prettig in de zomer, maar ook in de winter voelt de woning stabieler aan.
 
-We kozen voor hennepvezelplaten aan de binnenzijde van de muren en het plafond. Deze platen zijn dun genoeg om de ruimte nauwelijks te verkleinen, maar bieden een uitstekende thermische weerstand en een hoge faseverschuiving — wat zorgt voor koelte in de zomer.
+## Hoe werkt het in de praktijk?
 
-Aangevuld met een luchtdichte detaillering op alle aansluitingen creëerden we een goed presterende schil die de woning aanzienlijk comfortabeler maakt.
+Hennepvezelplaten kunnen worden aangebracht aan de binnenzijde van muren, in het dak of als vloerisolatie. Ze zijn te verwerken met gangbare gereedschappen en passen goed bij bestaande constructies.
 
-## Resultaat
+Gecombineerd met luchtdichte detaillering — folie, tape, zorgvuldige aansluitingen — levert dit een aanpak die merkbaar verschil maakt in comfort en energieverbruik.
 
-De bewoners rapporteren een significant comfortabeler woning: warmer in de winter, koeler in de zomer, en geen tocht meer. De maandelijkse energierekening daalde met ruim 40%.
+Benieuwd wat er in uw woning mogelijk is? Neem gerust contact op.
