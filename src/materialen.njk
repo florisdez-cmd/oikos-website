@@ -1,0 +1,264 @@
+---
+layout: base.njk
+title: Materialen – Oikos Bouwend Bureau
+description: Oikos werkt met biobased isolatiematerialen die goed zijn voor mens, woning en klimaat.
+permalink: /materialen/
+---
+
+<main class="pt-24 bg-white">
+
+  <!-- Hero -->
+  <section class="bg-oikos-dark py-16 md:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <span class="section-tag" style="color: #8DC63F;">Biobased & duurzaam</span>
+      <h1 class="text-4xl md:text-5xl font-extrabold text-white leading-tight mt-1 mb-4">Onze materialen</h1>
+      <p class="text-gray-400 text-lg max-w-2xl leading-relaxed">
+        Oikos werkt uitsluitend met biobased materialen — gemaakt van planten, niet van olie. Ze zijn gezond voor bewoners, goed voor het klimaat en ademen mee met de woning.
+      </p>
+    </div>
+  </section>
+
+  <!-- Split panel -->
+  <section class="max-w-5xl mx-auto px-6 py-12 md:py-16">
+    <div class="flex flex-col md:flex-row gap-8 md:gap-12">
+
+      <!-- Linker lijst -->
+      <div class="md:w-64 flex-shrink-0">
+        <p class="text-xs font-bold tracking-widest text-oikos-gray uppercase mb-4">Materialen</p>
+        <ul class="space-y-1" id="material-list">
+
+          <li>
+            <button data-material="exie" class="material-btn w-full text-left px-4 py-3 rounded-xl font-semibold text-sm transition-all active">
+              EXIE CaNaDry
+            </button>
+          </li>
+          <li>
+            <button data-material="houtvezel" class="material-btn w-full text-left px-4 py-3 rounded-xl font-semibold text-sm transition-all">
+              Houtvezel
+            </button>
+          </li>
+          <li>
+            <button data-material="kalkpleister" class="material-btn w-full text-left px-4 py-3 rounded-xl font-semibold text-sm transition-all opacity-40 cursor-not-allowed" disabled>
+              Kalkpleister
+            </button>
+          </li>
+          <li>
+            <button data-material="cellulose" class="material-btn w-full text-left px-4 py-3 rounded-xl font-semibold text-sm transition-all opacity-40 cursor-not-allowed" disabled>
+              Cellulose
+            </button>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- Rechter inhoud -->
+      <div class="flex-1 min-w-0">
+
+        <!-- EXIE CaNaDry -->
+        <div id="panel-exie" class="material-panel">
+          <div class="mb-6">
+            <h2 class="text-3xl font-extrabold text-oikos-dark">EXIE CaNaDry</h2>
+            <p class="text-oikos-green font-semibold text-base mt-1">Kalkhennep isolatie</p>
+          </div>
+
+          <p class="text-oikos-gray leading-relaxed mb-4">
+            EXIE CaNaDry is een isolatiemateriaal op basis van hennepvezels en kalk. Het wordt ter plaatse aangebracht als een vochtige specie die verhardt en een massief, dampopen isolatiepakket vormt.
+          </p>
+          <p class="text-oikos-gray leading-relaxed mb-8">
+            Hennepvezels binden CO₂ tijdens het groeien — die CO₂ blijft opgeslagen in de muur. Het materiaal is daardoor netto CO₂-negatief. Kalk reguleert vocht op een natuurlijke manier, zonder dat dampremmers nodig zijn. Geen formaldehyde, geen synthetische bindmiddelen.
+          </p>
+
+          <!-- Specs grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-oikos-green-light">
+              <div class="w-10 h-10 rounded-lg bg-oikos-green flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <div>
+                <p class="text-oikos-dark font-bold text-sm">Warmtegeleiding (λ)</p>
+                <p class="text-oikos-green font-extrabold text-2xl leading-none mt-0.5">0,048 <span class="text-base font-semibold">W/mK</span></p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-oikos-green-light">
+              <div class="w-10 h-10 rounded-lg bg-oikos-green flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <p class="text-oikos-dark font-bold text-sm">Thermische faseverschuiving</p>
+                <p class="text-oikos-green font-extrabold text-2xl leading-none mt-0.5">+11 <span class="text-base font-semibold">uur</span></p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-oikos-green-light">
+              <div class="w-10 h-10 rounded-lg bg-oikos-green flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+              </div>
+              <div>
+                <p class="text-oikos-dark font-bold text-sm">CO₂-balans</p>
+                <p class="text-oikos-green font-extrabold text-2xl leading-none mt-0.5">CO₂-negatief</p>
+                <p class="text-oikos-gray text-xs mt-1">Bindt meer dan productie kost</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div class="p-4 rounded-xl bg-oikos-green-light">
+                <p class="text-oikos-dark font-bold text-xs">Dichtheid</p>
+                <p class="text-oikos-green font-extrabold text-lg leading-none mt-1">~275 <span class="text-sm font-semibold">kg/m³</span></p>
+              </div>
+              <div class="p-4 rounded-xl bg-oikos-green-light">
+                <p class="text-oikos-dark font-bold text-xs">Formaldehyde</p>
+                <p class="text-oikos-green font-extrabold text-lg leading-none mt-1">Vrij</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Toepassingen -->
+          <div class="border-t border-gray-100 pt-8">
+            <p class="text-xs font-bold tracking-widest text-oikos-gray uppercase mb-4">Toepassingen</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-100 text-oikos-dark text-sm font-semibold px-4 py-2 rounded-full">Spouwmuren</span>
+              <span class="bg-gray-100 text-oikos-dark text-sm font-semibold px-4 py-2 rounded-full">Vloerisolatie</span>
+              <span class="bg-gray-100 text-oikos-dark text-sm font-semibold px-4 py-2 rounded-full">Binnenwanden</span>
+              <span class="bg-gray-100 text-oikos-dark text-sm font-semibold px-4 py-2 rounded-full">Dakisolatie</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Houtvezel -->
+        <div id="panel-houtvezel" class="material-panel hidden">
+          <div class="mb-6">
+            <h2 class="text-3xl font-extrabold text-oikos-dark">Houtvezel</h2>
+            <p class="text-oikos-green font-semibold text-base mt-1">Biobased isolatieplaat & inblaas</p>
+          </div>
+
+          <p class="text-oikos-gray leading-relaxed mb-4">
+            Houtvezelisolatie wordt gemaakt van reststromen uit de houtindustrie. Het is een beproefde, biobased isolatieoplossing die al decennialang in Europa wordt toegepast — als plaat voor dak en vloer, of als los materiaal voor inblazen in spouwmuren.
+          </p>
+          <p class="text-oikos-gray leading-relaxed mb-8">
+            Houtvezel heeft een hoge thermische massa: het neemt warmte traag op en geeft die langzaam weer af. In de zomer zorgt dat voor een aangenaam koele woning. Het materiaal reguleert ook vocht en is volledig dampopen.
+          </p>
+
+          <!-- Specs grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
+
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-oikos-green-light">
+              <div class="w-10 h-10 rounded-lg bg-oikos-green flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+              </div>
+              <div>
+                <p class="text-oikos-dark font-bold text-sm">Warmtegeleiding (λ)</p>
+                <p class="text-oikos-green font-extrabold text-2xl leading-none mt-0.5">0,040 <span class="text-base font-semibold">W/mK</span></p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-oikos-green-light">
+              <div class="w-10 h-10 rounded-lg bg-oikos-green flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+              </div>
+              <div>
+                <p class="text-oikos-dark font-bold text-sm">Thermische faseverschuiving</p>
+                <p class="text-oikos-green font-extrabold text-2xl leading-none mt-0.5">8–12 <span class="text-base font-semibold">uur</span></p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4 p-4 rounded-xl bg-oikos-green-light">
+              <div class="w-10 h-10 rounded-lg bg-oikos-green flex items-center justify-center flex-shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064"/></svg>
+              </div>
+              <div>
+                <p class="text-oikos-dark font-bold text-sm">Herkomst</p>
+                <p class="text-oikos-green font-extrabold text-2xl leading-none mt-0.5">Reststromen</p>
+                <p class="text-oikos-gray text-xs mt-1">Uit de Europese houtindustrie</p>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-2 gap-3">
+              <div class="p-4 rounded-xl bg-oikos-green-light">
+                <p class="text-oikos-dark font-bold text-xs">Dichtheid</p>
+                <p class="text-oikos-green font-extrabold text-lg leading-none mt-1">50–110 <span class="text-sm font-semibold">kg/m³</span></p>
+              </div>
+              <div class="p-4 rounded-xl bg-oikos-green-light">
+                <p class="text-oikos-dark font-bold text-xs">Dampopen</p>
+                <p class="text-oikos-green font-extrabold text-lg leading-none mt-1">Ja</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Toepassingen -->
+          <div class="border-t border-gray-100 pt-8">
+            <p class="text-xs font-bold tracking-widest text-oikos-gray uppercase mb-4">Toepassingen</p>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-100 text-oikos-dark text-sm font-semibold px-4 py-2 rounded-full">Hellend dak</span>
+              <span class="bg-gray-100 text-oikos-dark text-sm font-semibold px-4 py-2 rounded-full">Vloerisolatie</span>
+              <span class="bg-gray-100 text-oikos-dark text-sm font-semibold px-4 py-2 rounded-full">Spouwmuren (inblaas)</span>
+              <span class="bg-gray-100 text-oikos-dark text-sm font-semibold px-4 py-2 rounded-full">Plat dak</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kalkpleister (placeholder) -->
+        <div id="panel-kalkpleister" class="material-panel hidden">
+          <div class="flex items-center gap-3 mb-6">
+            <h2 class="text-3xl font-extrabold text-oikos-dark">Kalkpleister</h2>
+            <span class="bg-gray-200 text-gray-500 text-xs font-bold px-3 py-1 rounded-full">Binnenkort</span>
+          </div>
+          <p class="text-oikos-gray leading-relaxed">Dit materiaal wordt binnenkort toegevoegd aan ons portfolio.</p>
+        </div>
+
+        <!-- Cellulose (placeholder) -->
+        <div id="panel-cellulose" class="material-panel hidden">
+          <div class="flex items-center gap-3 mb-6">
+            <h2 class="text-3xl font-extrabold text-oikos-dark">Cellulose</h2>
+            <span class="bg-gray-200 text-gray-500 text-xs font-bold px-3 py-1 rounded-full">Binnenkort</span>
+          </div>
+          <p class="text-oikos-gray leading-relaxed">Dit materiaal wordt binnenkort toegevoegd aan ons portfolio.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="border-t border-gray-100 py-14">
+    <div class="max-w-5xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div>
+        <p class="text-oikos-dark font-bold text-lg">Welk materiaal past bij jouw woning?</p>
+        <p class="text-oikos-gray text-sm mt-1">Oikos adviseert altijd op maat — geen standaard offerte.</p>
+      </div>
+      <a href="/#contact" class="bg-oikos-green hover:bg-oikos-green-dark text-white px-8 py-3.5 rounded-full font-bold text-sm transition-colors whitespace-nowrap shadow-md">
+        Vraag een gesprek aan
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<style>
+  .material-btn { color: #6B6B6B; background: transparent; }
+  .material-btn:hover:not(:disabled) { background: #EFF7DC; color: #3C3C3C; }
+  .material-btn.active { background: #EFF7DC; color: #3C3C3C; border-left: 3px solid #8DC63F; }
+</style>
+
+<script>
+  const btns = document.querySelectorAll('.material-btn:not([disabled])');
+  const panels = document.querySelectorAll('.material-panel');
+
+  btns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.material;
+
+      // Update buttons
+      document.querySelectorAll('.material-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      // Update panels
+      panels.forEach(p => {
+        p.classList.toggle('hidden', p.id !== 'panel-' + target);
+      });
+    });
+  });
+</script>
