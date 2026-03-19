@@ -12,7 +12,7 @@ public_folder: "/assets/uploads"
 media_library:
   name: cloudinary
   config:
-    cloud_name: mediaflows_6423f3e9-9d70-4fc2-8c3f-ffb9b69add9e
+    cloud_name: dwzeogksz
     api_key: 883256795557446
 
 collections:
