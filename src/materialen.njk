@@ -75,7 +75,15 @@ permalink: /materialen/
               <span class="font-semibold">Bouwtechnische tekeningen</span>
             </button>
             <div class="tekeningen-panel hidden mt-4">
-              <p class="text-oikos-gray text-sm leading-relaxed">Bouwtechnische tekeningen worden hier toegevoegd zodra ze beschikbaar zijn. Neem contact op voor specifieke detailtekeningen.</p>
+              {% if mat.tekeningen and mat.tekeningen.length > 0 %}
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  {% for tekening in mat.tekeningen %}
+                  <img src="{{ tekening }}" alt="Bouwtechnische tekening {{ mat.naam }}" class="rounded-xl border border-gray-200 w-full">
+                  {% endfor %}
+                </div>
+              {% else %}
+                <p class="text-oikos-gray text-sm leading-relaxed">Bouwtechnische tekeningen worden hier toegevoegd zodra ze beschikbaar zijn. Neem contact op voor specifieke detailtekeningen.</p>
+              {% endif %}
             </div>
           </div>
         </div>

@@ -140,6 +140,15 @@ collections:
                   label: "Eigenschap"
                   name: "item"
                   widget: "string"
+              - label: "Bouwtechnische tekeningen (optioneel)"
+                name: "tekeningen"
+                widget: "list"
+                required: false
+                hint: "Upload bouwtechnische tekeningen als afbeelding (PNG of JPG). Laat leeg als er nog geen zijn."
+                field:
+                  label: "Tekening"
+                  name: "item"
+                  widget: "image"
 
   # --- INSTELLINGEN ---
   - name: "instellingen_db"
