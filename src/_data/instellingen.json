@@ -1,11 +1,19 @@
 {
+  "hero_stat_1_label": "Energiebesparing",
+  "hero_stat_2_label": "Negatief materiaal",
+  "hero_stat_3_label": "Formaldehyde",
+  "hero_stat_4_label": "Thermische faseverschuiving",
   "email_hoofd": "info@bureau-oikos.nl",
   "email_guido": "guido@bureau-oikos.nl",
-  "email_thom": "thom@bureau-oikos.nl",
+  "hero_stat_3_prefix": "Streven naar",
   "linkedin_guido": "https://www.linkedin.com/in/guido-bouwman-7ab306146/",
-  "linkedin_thom": "",
   "knop_contact": "Neem contact op",
-  "footer_tekst": "Duurzame renovatie met biobased materialen. Wij maken woningen klaar voor de toekomst.",
+  "hero_stat_1_prefix": "Tot",
+  "typewriter_zinnen": [
+    "Wij maken woningen gezond en energiezuinig.",
+    "Biobased isolatie voor een gezond binnenmilieu.",
+    "Van advies tot oplevering — klein team, groot resultaat."
+  ],
   "hero_fotos": [
     "/assets/img/oikos-10.jpg",
     "/assets/img/oikos-1.jpg",
@@ -13,19 +21,11 @@
     "/assets/img/oikos-20.jpg",
     "/assets/img/oikos-6.jpg"
   ],
-  "typewriter_zinnen": [
-    "Wij maken woningen gezond en energiezuinig.",
-    "Biobased isolatie voor een gezond binnenmilieu.",
-    "Van advies tot oplevering — klein team, groot resultaat."
-  ],
-  "hero_stat_1_prefix": "Tot",
-  "hero_stat_1_waarde": "90%",
-  "hero_stat_1_label": "Energiebesparing",
-  "hero_stat_2_waarde": "CO₂−",
-  "hero_stat_2_label": "Negatief materiaal",
-  "hero_stat_3_prefix": "Streven naar",
-  "hero_stat_3_waarde": "0%",
-  "hero_stat_3_label": "Formaldehyde",
   "hero_stat_4_waarde": "16u",
-  "hero_stat_4_label": "Thermische faseverschuiving"
+  "hero_stat_3_waarde": "0%",
+  "hero_stat_2_waarde": "CO₂−",
+  "hero_stat_1_waarde": "90%",
+  "linkedin_thom": "",
+  "email_thom": "thom@bureau-oikos.nl",
+  "footer_tekst": "Duurzame renovatie met biobased materialen. Wij maken woningen klaar voor de toekomst."
 }
