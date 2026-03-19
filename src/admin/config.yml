@@ -9,11 +9,6 @@ backend:
 media_folder: "src/assets/uploads"
 public_folder: "/assets/uploads"
 
-media_library:
-  name: cloudinary
-  config:
-    cloud_name: dwzeogksz
-    api_key: 883256795557446
 
 collections:
 
