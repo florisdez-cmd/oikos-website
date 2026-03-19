@@ -6,16 +6,12 @@ backend:
   name: git-gateway
   branch: main
 
-# Waar worden media-bestanden (foto's) opgeslagen
 media_folder: "src/assets/uploads"
 public_folder: "/assets/uploads"
 
-# =====================================================
-# COLLECTIES – wat de klant kan bewerken
-# =====================================================
 collections:
 
-  # --- NIEUWSBERICHTEN (klant kan zelf aanmaken / bewerken) ---
+  # --- NIEUWSBERICHTEN ---
   - name: "posts"
     label: "Nieuwsberichten"
     label_singular: "Nieuwsbericht"
@@ -27,8 +23,6 @@ collections:
       - label: "Titel"
         name: "title"
         widget: "string"
-        hint: "De titel van het bericht"
-
       - label: "Publicatiedatum"
         name: "date"
         widget: "datetime"
@@ -36,50 +30,189 @@ collections:
         date_format: "DD-MM-YYYY"
         time_format: false
         default: ""
-
       - label: "Uitgelichte afbeelding"
         name: "image"
         widget: "image"
         required: false
         hint: "Aanbevolen formaat: 1200×675px (16:9)"
-
       - label: "Korte samenvatting"
         name: "excerpt"
         widget: "text"
         required: false
-        hint: "Wordt getoond als preview-tekst op de homepage en het nieuwsoverzicht (max. ~150 tekens)"
-
+        hint: "Wordt getoond als preview-tekst op de homepage (~150 tekens)"
       - label: "Inhoud"
         name: "body"
         widget: "markdown"
-        hint: "De volledige tekst van het bericht. Gebruik ## voor tussenkopjes."
-
+        hint: "De volledige tekst. Gebruik ## voor tussenkopjes. Verwijs naar bronnen met [1], [2] etc."
       - label: "Locatie op kaart"
         name: "map_url"
         widget: "string"
         required: false
-        hint: "Plak hier een Google Maps embed-link. Ga naar maps.google.com → zoek adres → Delen → Kaart insluiten → kopieer de src-link (begint met https://www.google.com/maps/embed?...)"
-
+        hint: "Google Maps embed-link (maps.google.com → Delen → Kaart insluiten → kopieer src-link)"
       - label: "Locatienaam"
         name: "map_label"
         widget: "string"
         required: false
-        hint: "Bijv. 'Den Haag, Archipelbuurt' — wordt onder de kaart getoond"
-
+        hint: "Bijv. 'Den Haag, Archipelbuurt'"
       - label: "Bronnen"
         name: "bronnen"
         widget: "list"
         required: false
-        hint: "Voeg bronnen toe die onderaan het bericht worden getoond. Verwijs in je tekst naar [1], [2] etc."
+        hint: "Verwijs in de tekst naar [1], [2] etc."
         fields:
           - label: "Nummer"
             name: "nr"
             widget: "number"
             value_type: "int"
-          - label: "Omschrijving / titel"
+          - label: "Omschrijving"
             name: "titel"
             widget: "string"
           - label: "URL (optioneel)"
             name: "url"
             widget: "string"
             required: false
+
+  # --- MATERIALEN ---
+  - name: "materialen_db"
+    label: "Materialen"
+    files:
+      - label: "Alle materialen"
+        name: "materialen"
+        file: "src/_data/materialen.json"
+        format: json
+        fields:
+          - label: "Materialen"
+            name: "items"
+            widget: "list"
+            label_singular: "Materiaal"
+            summary: "{{fields.naam}}"
+            fields:
+              - label: "ID (geen spaties, bijv. hennep)"
+                name: "id"
+                widget: "string"
+                hint: "Wordt gebruikt in de URL: /materialen/?m=hennep — gebruik alleen kleine letters zonder spaties"
+              - label: "Categorie (bijv. Kalkhennep)"
+                name: "categorie"
+                widget: "string"
+              - label: "Naam"
+                name: "naam"
+                widget: "string"
+              - label: "Korte beschrijving (homepage kaartje)"
+                name: "homepage_beschrijving"
+                widget: "text"
+                hint: "Wordt getoond op de homepage (~100 tekens)"
+              - label: "Homepage statistiek — waarde"
+                name: "homepage_stat_waarde"
+                widget: "string"
+                hint: "Bijv. 0,054 of 8–12u"
+              - label: "Homepage statistiek — eenheid"
+                name: "homepage_stat_eenheid"
+                widget: "string"
+                hint: "Bijv. W/mK of faseverschuiving"
+              - label: "Volledige beschrijving (materialen pagina)"
+                name: "beschrijving"
+                widget: "text"
+              - label: "Technische specs (max. 4)"
+                name: "specs"
+                widget: "list"
+                fields:
+                  - {label: "Label", name: "label", widget: "string", hint: "Bijv. λ-waarde"}
+                  - {label: "Waarde", name: "waarde", widget: "string", hint: "Bijv. 0,054"}
+                  - {label: "Eenheid", name: "eenheid", widget: "string", required: false, hint: "Bijv. W/mK"}
+              - label: "Toepassingen"
+                name: "toepassingen"
+                widget: "list"
+                field:
+                  label: "Toepassing"
+                  name: "item"
+                  widget: "string"
+                hint: "Bijv. Dakisolatie, Vloerisolatie"
+              - label: "Eigenschappen"
+                name: "eigenschappen"
+                widget: "list"
+                field:
+                  label: "Eigenschap"
+                  name: "item"
+                  widget: "string"
+
+  # --- INSTELLINGEN ---
+  - name: "instellingen_db"
+    label: "Instellingen"
+    files:
+      - label: "Contactgegevens & teksten"
+        name: "instellingen"
+        file: "src/_data/instellingen.json"
+        format: json
+        fields:
+          - label: "Hoofd e-mailadres"
+            name: "email_hoofd"
+            widget: "string"
+            hint: "Wordt gebruikt op de contact-knop en in de footer"
+          - label: "E-mail Guido"
+            name: "email_guido"
+            widget: "string"
+          - label: "E-mail Thom"
+            name: "email_thom"
+            widget: "string"
+          - label: "LinkedIn Guido"
+            name: "linkedin_guido"
+            widget: "string"
+          - label: "LinkedIn Thom"
+            name: "linkedin_thom"
+            widget: "string"
+            required: false
+            hint: "Laat leeg als nog niet bekend"
+          - label: "Tekst op contact-knop"
+            name: "knop_contact"
+            widget: "string"
+          - label: "Footer tekst"
+            name: "footer_tekst"
+            widget: "text"
+          - label: "Hero slideshow foto's"
+            name: "hero_fotos"
+            widget: "list"
+            field:
+              label: "Foto"
+              name: "item"
+              widget: "image"
+            hint: "Foto's die afwisselend op de achtergrond van de homepage verschijnen"
+          - label: "Typerende zinnen (homepage)"
+            name: "typewriter_zinnen"
+            widget: "list"
+            field:
+              label: "Zin"
+              name: "item"
+              widget: "string"
+            hint: "De zinnen die getypt worden in de hero. Eindig elke zin met een punt."
+          - label: "Stat 1 — prefix (bijv. Tot)"
+            name: "hero_stat_1_prefix"
+            widget: "string"
+            required: false
+          - label: "Stat 1 — waarde (bijv. 90%)"
+            name: "hero_stat_1_waarde"
+            widget: "string"
+          - label: "Stat 1 — label (bijv. Energiebesparing)"
+            name: "hero_stat_1_label"
+            widget: "string"
+          - label: "Stat 2 — waarde (bijv. CO₂−)"
+            name: "hero_stat_2_waarde"
+            widget: "string"
+          - label: "Stat 2 — label"
+            name: "hero_stat_2_label"
+            widget: "string"
+          - label: "Stat 3 — prefix (bijv. Streven naar)"
+            name: "hero_stat_3_prefix"
+            widget: "string"
+            required: false
+          - label: "Stat 3 — waarde (bijv. 0%)"
+            name: "hero_stat_3_waarde"
+            widget: "string"
+          - label: "Stat 3 — label (bijv. Formaldehyde)"
+            name: "hero_stat_3_label"
+            widget: "string"
+          - label: "Stat 4 — waarde (bijv. 16u)"
+            name: "hero_stat_4_waarde"
+            widget: "string"
+          - label: "Stat 4 — label (bijv. Thermische faseverschuiving)"
+            name: "hero_stat_4_label"
+            widget: "string"

@@ -8,11 +8,9 @@ description: Duurzame renovatie met hennepvezels. Guido Bouwman maakt woningen k
 <section id="home" class="relative min-h-screen flex flex-col overflow-hidden" data-nav-bg="transparent" data-nav-theme="light">
   <div class="absolute inset-0">
     <div class="hero-slides absolute inset-0">
-      <img src="/assets/img/oikos-10.jpg" alt="Oikos project" class="hero-slide active" />
-      <img src="/assets/img/oikos-1.jpg" alt="Oikos project" class="hero-slide" />
-      <img src="/assets/img/oikos-3.jpg" alt="Oikos project" class="hero-slide" />
-      <img src="/assets/img/oikos-20.jpg" alt="Oikos project" class="hero-slide" />
-      <img src="/assets/img/oikos-6.jpg" alt="Oikos project" class="hero-slide" />
+      {% for foto in instellingen.hero_fotos %}
+      <img src="{{ foto }}" alt="Oikos project" class="hero-slide{% if loop.first %} active{% endif %}" />
+      {% endfor %}
     </div>
     <div class="hero-overlay absolute inset-0"></div>
   </div>
@@ -35,24 +33,24 @@ description: Duurzame renovatie met hennepvezels. Guido Bouwman maakt woningen k
     <div class="max-w-6xl mx-auto px-6 pb-6 md:pb-10">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-2 md:gap-3">
         <div class="bg-black/40 backdrop-blur border border-white/10 rounded-2xl px-3 py-4 sm:px-5 sm:py-5 text-center flex flex-col justify-between">
-          <p class="text-[10px] text-white/40 uppercase tracking-widest h-4 flex items-center justify-center mb-1">Tot</p>
-          <p class="text-2xl sm:text-3xl font-extrabold text-white mb-2">90%</p>
-          <p class="text-white/50 text-[10px] sm:text-xs uppercase tracking-widest leading-snug">Energiebesparing</p>
+          <p class="text-[10px] text-white/40 uppercase tracking-widest h-4 flex items-center justify-center mb-1">{{ instellingen.hero_stat_1_prefix or "&nbsp;" | safe }}</p>
+          <p class="text-2xl sm:text-3xl font-extrabold text-white mb-2">{{ instellingen.hero_stat_1_waarde }}</p>
+          <p class="text-white/50 text-[10px] sm:text-xs uppercase tracking-widest leading-snug">{{ instellingen.hero_stat_1_label }}</p>
         </div>
         <div class="bg-black/40 backdrop-blur border border-white/10 rounded-2xl px-3 py-4 sm:px-5 sm:py-5 text-center flex flex-col justify-between">
           <p class="text-[10px] text-white/40 uppercase tracking-widest h-4 flex items-center justify-center mb-1">&nbsp;</p>
-          <p class="text-2xl sm:text-3xl font-extrabold text-oikos-green mb-2">CO₂−</p>
-          <p class="text-white/50 text-[10px] sm:text-xs uppercase tracking-widest leading-snug">Negatief materiaal</p>
+          <p class="text-2xl sm:text-3xl font-extrabold text-oikos-green mb-2">{{ instellingen.hero_stat_2_waarde }}</p>
+          <p class="text-white/50 text-[10px] sm:text-xs uppercase tracking-widest leading-snug">{{ instellingen.hero_stat_2_label }}</p>
         </div>
         <div class="bg-black/40 backdrop-blur border border-white/10 rounded-2xl px-3 py-4 sm:px-5 sm:py-5 text-center flex flex-col justify-between">
-          <p class="text-[10px] text-white/40 uppercase tracking-widest h-4 flex items-center justify-center mb-1">Streven naar</p>
-          <p class="text-2xl sm:text-3xl font-extrabold text-white mb-2">0%</p>
-          <p class="text-white/50 text-[10px] sm:text-xs uppercase tracking-widest leading-snug">Formaldehyde</p>
+          <p class="text-[10px] text-white/40 uppercase tracking-widest h-4 flex items-center justify-center mb-1">{{ instellingen.hero_stat_3_prefix or "&nbsp;" | safe }}</p>
+          <p class="text-2xl sm:text-3xl font-extrabold text-white mb-2">{{ instellingen.hero_stat_3_waarde }}</p>
+          <p class="text-white/50 text-[10px] sm:text-xs uppercase tracking-widest leading-snug">{{ instellingen.hero_stat_3_label }}</p>
         </div>
         <div class="bg-black/40 backdrop-blur border border-white/10 rounded-2xl px-3 py-4 sm:px-5 sm:py-5 text-center flex flex-col justify-between">
           <p class="text-[10px] text-white/40 uppercase tracking-widest h-4 flex items-center justify-center mb-1">&nbsp;</p>
-          <p class="text-2xl sm:text-3xl font-extrabold text-white mb-2">16u</p>
-          <p class="text-white/50 text-[10px] sm:text-xs uppercase tracking-widest leading-snug">Thermische fase&shy;verschuiving</p>
+          <p class="text-2xl sm:text-3xl font-extrabold text-white mb-2">{{ instellingen.hero_stat_4_waarde }}</p>
+          <p class="text-white/50 text-[10px] sm:text-xs uppercase tracking-widest leading-snug">{{ instellingen.hero_stat_4_label }}</p>
         </div>
       </div>
     </div>
@@ -172,60 +170,18 @@ description: Duurzame renovatie met hennepvezels. Guido Bouwman maakt woningen k
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 fade-up d1">
 
-      <a href="/materialen/?m=hennep" class="mat-home-card group">
-        <span class="mat-home-tag">Kalkhennep</span>
-        <h3 class="mat-home-title">EXIE CaNaDry</h3>
-        <p class="mat-home-desc">CO₂-negatief, dampdoorlatend en volledig biobased. Het meest compacte isolatiepakket voor bestaande woningen.</p>
+      {% for mat in materialen.items %}
+      <a href="/materialen/?m={{ mat.id }}" class="mat-home-card group">
+        <span class="mat-home-tag">{{ mat.categorie }}</span>
+        <h3 class="mat-home-title">{{ mat.naam }}</h3>
+        <p class="mat-home-desc">{{ mat.homepage_beschrijving }}</p>
         <div class="mat-home-stat">
-          <span class="mat-home-stat-val">0,054</span>
-          <span class="mat-home-stat-unit">W/mK</span>
+          <span class="mat-home-stat-val">{{ mat.homepage_stat_waarde }}</span>
+          <span class="mat-home-stat-unit">{{ mat.homepage_stat_eenheid }}</span>
         </div>
         <span class="mat-home-arrow">→</span>
       </a>
-
-      <a href="/materialen/?m=schapenwol" class="mat-home-card group">
-        <span class="mat-home-tag">Dierlijk biobased</span>
-        <h3 class="mat-home-title">Schapenwol</h3>
-        <p class="mat-home-desc">Neemt tot 35% van het eigen gewicht aan vocht op zonder isolatiewaarde te verliezen. Zelfblussend en biologisch afbreekbaar.</p>
-        <div class="mat-home-stat">
-          <span class="mat-home-stat-val">0,035</span>
-          <span class="mat-home-stat-unit">W/mK</span>
-        </div>
-        <span class="mat-home-arrow">→</span>
-      </a>
-
-      <a href="/materialen/?m=cellulose" class="mat-home-card group">
-        <span class="mat-home-tag">Gerecycled papier</span>
-        <h3 class="mat-home-title">Cellulose</h3>
-        <p class="mat-home-desc">Inblaasisolatie van gerecycled krantenpapier. Geschikt voor renovaties zonder openbreken van de constructie.</p>
-        <div class="mat-home-stat">
-          <span class="mat-home-stat-val">0,038</span>
-          <span class="mat-home-stat-unit">W/mK</span>
-        </div>
-        <span class="mat-home-arrow">→</span>
-      </a>
-
-      <a href="/materialen/?m=houtvezel" class="mat-home-card group">
-        <span class="mat-home-tag">Biobased hout</span>
-        <h3 class="mat-home-title">Houtvezel</h3>
-        <p class="mat-home-desc">Hoge thermische massa beschermt tegen oververhitting in de zomer. Beschikbaar als plaat, mat of inblaasmateriaal.</p>
-        <div class="mat-home-stat">
-          <span class="mat-home-stat-val">8–12u</span>
-          <span class="mat-home-stat-unit">faseverschuiving</span>
-        </div>
-        <span class="mat-home-arrow">→</span>
-      </a>
-
-      <a href="/materialen/?m=isovlas" class="mat-home-card group">
-        <span class="mat-home-tag">Plantvezels</span>
-        <h3 class="mat-home-title">Isovlas</h3>
-        <p class="mat-home-desc">Gemaakt van lijnvezels, geteeld in de Lage Landen. Lage grijze energie, goede vochtregulering en makkelijk verwerken.</p>
-        <div class="mat-home-stat">
-          <span class="mat-home-stat-val">0,035</span>
-          <span class="mat-home-stat-unit">W/mK</span>
-        </div>
-        <span class="mat-home-arrow">→</span>
-      </a>
+      {% endfor %}
 
       <a href="/materialen/" class="mat-home-card mat-home-cta group flex flex-col justify-center items-center text-center">
         <svg class="h-8 w-8 text-oikos-green mb-3 group-hover:scale-110 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/></svg>
@@ -385,9 +341,9 @@ description: Duurzame renovatie met hennepvezels. Guido Bouwman maakt woningen k
             Vertel ons over het gebouw, de situatie en de ambitie. Dan kijken we samen wat er mogelijk is.
           </p>
         </div>
-        <a href="mailto:info@bureau-oikos.nl" class="inline-flex items-center gap-3 bg-oikos-green hover:bg-oikos-green-dark text-white font-bold px-8 py-4 rounded-full transition-colors text-base self-start">
+        <a href="mailto:{{ instellingen.email_hoofd }}" class="inline-flex items-center gap-3 bg-oikos-green hover:bg-oikos-green-dark text-white font-bold px-8 py-4 rounded-full transition-colors text-base self-start">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-          Neem contact op
+          {{ instellingen.knop_contact }}
         </a>
       </div>
 

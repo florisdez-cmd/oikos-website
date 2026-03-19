@@ -1,0 +1,114 @@
+{
+  "items": [
+    {
+      "id": "hennep",
+      "categorie": "Kalkhennep",
+      "naam": "EXIE CaNaDry",
+      "homepage_beschrijving": "CO₂-negatief, dampdoorlatend en volledig biobased. Het meest compacte isolatiepakket voor bestaande woningen.",
+      "homepage_stat_waarde": "0,054",
+      "homepage_stat_eenheid": "W/mK",
+      "beschrijving": "Een isolatiemateriaal van hennepvezels en kalk, aangebracht als droge mengeling. Het verhardt ter plaatse tot een massief, dampopen pakket. Hennep bindt CO₂ tijdens de groei — die koolstof blijft opgeslagen in de wand. Kalk reguleert vocht op een natuurlijke manier, zonder dat dampremmers of chemische bindmiddelen nodig zijn.",
+      "specs": [
+        { "label": "λ-waarde", "waarde": "0,054", "eenheid": "W/mK" },
+        { "label": "Faseverschuiving", "waarde": "+16", "eenheid": "uur (24cm)" },
+        { "label": "Dichtheid", "waarde": "~275", "eenheid": "kg/m³" },
+        { "label": "CO₂-balans", "waarde": "Negatief", "eenheid": "" }
+      ],
+      "toepassingen": ["Binnenwanden", "Spouwmuren", "Vloerisolatie", "Dakisolatie"],
+      "eigenschappen": [
+        "Volledig dampdoorlatend, geen dampremmer nodig",
+        "Geen formaldehyde of synthetische bindmiddelen",
+        "Hoge thermische massa: traag in warmteopname en -afgifte",
+        "Volledig biologisch afbreekbaar aan het einde van de levensduur"
+      ]
+    },
+    {
+      "id": "schapenwol",
+      "categorie": "Dierlijk biobased",
+      "naam": "Schapenwol",
+      "homepage_beschrijving": "Neemt tot 35% van het eigen gewicht aan vocht op zonder isolatiewaarde te verliezen. Zelfblussend en biologisch afbreekbaar.",
+      "homepage_stat_waarde": "0,035",
+      "homepage_stat_eenheid": "W/mK",
+      "beschrijving": "Schapenwol is een van de oudste isolatiematerialen ter wereld. Het reguleert vocht actief: het neemt tot 35% van het eigen gewicht aan vochtigheid op zonder de isolatiewaarde te verliezen, en geeft het gecontroleerd weer af. Daarmee draagt het bij aan een gezond binnenmilieu.",
+      "specs": [
+        { "label": "λ-waarde", "waarde": "0,035", "eenheid": "W/mK" },
+        { "label": "Vochtopname", "waarde": "35%", "eenheid": "van eigen gewicht" },
+        { "label": "Brandgedrag", "waarde": "Zelfblussend", "eenheid": "" },
+        { "label": "CO₂-balans", "waarde": "Positief", "eenheid": "" }
+      ],
+      "toepassingen": ["Dakisolatie", "Vloerisolatie", "Binnenwanden", "Spouwmuren"],
+      "eigenschappen": [
+        "Actieve vochtregulering zonder verlies van isolatiewaarde",
+        "Zelfblussend — stopt met branden als de vlam weggehaald wordt",
+        "Volledig biologisch afbreekbaar",
+        "Geen synthetische bindmiddelen of behandelingen nodig"
+      ]
+    },
+    {
+      "id": "cellulose",
+      "categorie": "Gerecycled papier",
+      "naam": "Cellulose",
+      "homepage_beschrijving": "Inblaasisolatie van gerecycled krantenpapier. Geschikt voor renovaties zonder openbreken van de constructie.",
+      "homepage_stat_waarde": "0,038",
+      "homepage_stat_eenheid": "W/mK",
+      "beschrijving": "Cellulose-isolatie wordt gemaakt van gerecycled krantenpapier en ingeblazen in de constructie. Het vult alle naden en kieren op zonder dat de wand opengebroken hoeft te worden. Dat maakt het bijzonder geschikt voor renovaties waarbij bewoners in het pand blijven.",
+      "specs": [
+        { "label": "λ-waarde", "waarde": "0,038", "eenheid": "W/mK" },
+        { "label": "Dichtheid", "waarde": "50–70", "eenheid": "kg/m³" },
+        { "label": "Gerecycled", "waarde": ">85%", "eenheid": "gerecycled papier" },
+        { "label": "CO₂-balans", "waarde": "Laag", "eenheid": "grijze energie" }
+      ],
+      "toepassingen": ["Dakisolatie (inblaas)", "Vloerisolatie", "Spouwmuren", "Plafonds"],
+      "eigenschappen": [
+        "Inblaasbaar — geen openbreken van de constructie nodig",
+        "Vult alle naden en kieren op",
+        "Gemaakt van meer dan 85% gerecycled materiaal",
+        "Goede geluidsdemping"
+      ]
+    },
+    {
+      "id": "houtvezel",
+      "categorie": "Biobased hout",
+      "naam": "Houtvezel",
+      "homepage_beschrijving": "Hoge thermische massa beschermt tegen oververhitting in de zomer. Beschikbaar als plaat, mat of inblaasmateriaal.",
+      "homepage_stat_waarde": "8–12u",
+      "homepage_stat_eenheid": "faseverschuiving",
+      "beschrijving": "Houtvezels worden geperst tot platen, matten of los inblaasmateriaal. De hoge thermische massa zorgt voor een faseverschuiving van 8 tot 12 uur — warmte die overdag de woning binnendringt, komt pas 's avonds aan de binnenzijde aan. Dat maakt houtvezel bijzonder effectief tegen oververhitting in de zomer.",
+      "specs": [
+        { "label": "λ-waarde", "waarde": "0,038", "eenheid": "W/mK" },
+        { "label": "Faseverschuiving", "waarde": "8–12", "eenheid": "uur" },
+        { "label": "Dichtheid", "waarde": "50–270", "eenheid": "kg/m³" },
+        { "label": "CO₂-balans", "waarde": "Negatief", "eenheid": "" }
+      ],
+      "toepassingen": ["Dakisolatie", "Buitengevelisolatie", "Vloerisolatie", "Binnenwanden"],
+      "eigenschappen": [
+        "Hoge thermische massa — beschermt tegen oververhitting",
+        "Beschikbaar als plaat, mat of inblaasmateriaal",
+        "CO₂-negatief over de volledige levenscyclus",
+        "Dampdoorlatend — geen condensatieproblemen"
+      ]
+    },
+    {
+      "id": "isovlas",
+      "categorie": "Plantvezels",
+      "naam": "Isovlas",
+      "homepage_beschrijving": "Gemaakt van lijnvezels, geteeld in de Lage Landen. Lage grijze energie, goede vochtregulering en makkelijk verwerken.",
+      "homepage_stat_waarde": "0,035",
+      "homepage_stat_eenheid": "W/mK",
+      "beschrijving": "Isovlas is gemaakt van lijnvezels (vlas) dat geteeld wordt in Nederland en België. Het materiaal heeft een lage grijze energie door de korte transportafstanden en het eenvoudige productieproces. Isovlas is makkelijk te verwerken met gewoon gereedschap en past goed in bestaande constructies.",
+      "specs": [
+        { "label": "λ-waarde", "waarde": "0,035", "eenheid": "W/mK" },
+        { "label": "Dichtheid", "waarde": "25–30", "eenheid": "kg/m³" },
+        { "label": "Herkomst", "waarde": "NL/BE", "eenheid": "geteeld" },
+        { "label": "CO₂-balans", "waarde": "Positief", "eenheid": "" }
+      ],
+      "toepassingen": ["Binnenwanden", "Dakisolatie", "Vloerisolatie", "Spouwmuren"],
+      "eigenschappen": [
+        "Geteeld in de Lage Landen — minimale transportkilometers",
+        "Makkelijk te verwerken met gangbaar gereedschap",
+        "Goede vochtregulering",
+        "Volledig biologisch afbreekbaar"
+      ]
+    }
+  ]
+}

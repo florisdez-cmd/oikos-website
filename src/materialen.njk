@@ -26,49 +26,46 @@ permalink: /materialen/
       <div class="md:w-52 flex-shrink-0">
         <p class="text-[10px] font-bold tracking-widest text-oikos-gray uppercase mb-3">Materialen</p>
         <ul class="flex flex-row overflow-x-auto gap-1 pb-2 md:flex-col md:space-y-0.5 md:overflow-x-visible md:pb-0" id="material-list">
-          <li><button data-mat="hennep"     class="mat-btn active w-full text-left">EXIE CaNaDry</button></li>
-          <li><button data-mat="schapenwol" class="mat-btn w-full text-left">Schapenwol</button></li>
-          <li><button data-mat="cellulose"  class="mat-btn w-full text-left">Cellulose</button></li>
-          <li><button data-mat="houtvezel"  class="mat-btn w-full text-left">Houtvezel</button></li>
-          <li><button data-mat="isovlas"    class="mat-btn w-full text-left">Isovlas</button></li>
+          {% for mat in materialen.items %}
+          <li><button data-mat="{{ mat.id }}" class="mat-btn{% if loop.first %} active{% endif %} w-full text-left">{{ mat.naam }}</button></li>
+          {% endfor %}
         </ul>
       </div>
 
       <!-- Rechter inhoud -->
       <div class="flex-1 min-w-0">
 
-        <!-- ── EXIE CaNaDry ── -->
-        <div id="panel-hennep" class="mat-panel">
-          <p class="text-oikos-green text-xs font-bold tracking-widest uppercase mb-1">Kalkhennep</p>
-          <h2 class="text-3xl font-extrabold text-oikos-dark mb-2">EXIE CaNaDry</h2>
-          <p class="text-oikos-gray text-sm mb-6 leading-relaxed max-w-xl">
-            Een isolatiemateriaal van hennepvezels en kalk, aangebracht als droge mengeling. Het verhardt ter plaatse tot een massief, dampopen pakket. Hennep bindt CO₂ tijdens de groei — die koolstof blijft opgeslagen in de wand. Kalk reguleert vocht op een natuurlijke manier, zonder dat dampremmers of chemische bindmiddelen nodig zijn.
-          </p>
+        {% for mat in materialen.items %}
+        <div id="panel-{{ mat.id }}" class="mat-panel{% if not loop.first %} hidden{% endif %}">
+          <p class="text-oikos-green text-xs font-bold tracking-widest uppercase mb-1">{{ mat.categorie }}</p>
+          <h2 class="text-3xl font-extrabold text-oikos-dark mb-2">{{ mat.naam }}</h2>
+          <p class="text-oikos-gray text-sm mb-6 leading-relaxed max-w-xl">{{ mat.beschrijving }}</p>
 
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-            <div class="spec-card"><span class="spec-label">λ-waarde</span><span class="spec-val">0,054</span><span class="spec-unit">W/mK</span></div>
-            <div class="spec-card"><span class="spec-label">Faseverschuiving</span><span class="spec-val">+16</span><span class="spec-unit">uur (24cm)</span></div>
-            <div class="spec-card"><span class="spec-label">Dichtheid</span><span class="spec-val">~275</span><span class="spec-unit">kg/m³</span></div>
-            <div class="spec-card co2"><span class="spec-label">CO₂-balans</span><span class="spec-val text-oikos-green">Negatief</span></div>
+            {% for spec in mat.specs %}
+            <div class="spec-card">
+              <span class="spec-label">{{ spec.label }}</span>
+              <span class="spec-val">{{ spec.waarde }}</span>
+              {% if spec.eenheid %}<span class="spec-unit">{{ spec.eenheid }}</span>{% endif %}
+            </div>
+            {% endfor %}
           </div>
 
           <div class="mb-8">
             <p class="text-[10px] font-bold tracking-widest text-oikos-gray uppercase mb-3">Toepassingen</p>
             <div class="flex flex-wrap gap-2">
-              <span class="tag">Binnenwanden</span>
-              <span class="tag">Spouwmuren</span>
-              <span class="tag">Vloerisolatie</span>
-              <span class="tag">Dakisolatie</span>
+              {% for toepassing in mat.toepassingen %}
+              <span class="tag">{{ toepassing }}</span>
+              {% endfor %}
             </div>
           </div>
 
           <div class="mb-4">
             <p class="text-[10px] font-bold tracking-widest text-oikos-gray uppercase mb-3">Eigenschappen</p>
             <ul class="space-y-2 text-sm text-oikos-gray">
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Volledig dampdoorlatend, geen dampremmer nodig</li>
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Geen formaldehyde of synthetische bindmiddelen</li>
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Hoge thermische massa: traag in warmteopname en -afgifte</li>
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Volledig biologisch afbreekbaar aan het einde van de levensduur</li>
+              {% for eigenschap in mat.eigenschappen %}
+              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> {{ eigenschap }}</li>
+              {% endfor %}
             </ul>
           </div>
 
@@ -82,195 +79,7 @@ permalink: /materialen/
             </div>
           </div>
         </div>
-
-        <!-- ── Schapenwol ── -->
-        <div id="panel-schapenwol" class="mat-panel hidden">
-          <p class="text-oikos-green text-xs font-bold tracking-widest uppercase mb-1">Dierlijk biobased</p>
-          <h2 class="text-3xl font-extrabold text-oikos-dark mb-2">Schapenwol</h2>
-          <p class="text-oikos-gray text-sm mb-6 leading-relaxed max-w-xl">
-            Schapenwol is een van de oudste isolatiematerialen en heeft eigenschappen die synthetische materialen niet kunnen evenaren. Wol regelt vocht uitzonderlijk goed: de vezel kan tot 35% van het eigen gewicht aan vocht opnemen zonder dat de isolatiewaarde merkbaar afneemt. Daarna geeft het vocht geleidelijk weer af aan de omgeving. Dit maakt wol geschikt voor constructies waar vochtbeheersing kritisch is.
-          </p>
-
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-            <div class="spec-card"><span class="spec-label">λ-waarde</span><span class="spec-val">0,035–0,040</span><span class="spec-unit">W/mK</span></div>
-            <div class="spec-card"><span class="spec-label">Vochtopname</span><span class="spec-val">Tot 35%</span><span class="spec-unit">eigen gewicht</span></div>
-            <div class="spec-card"><span class="spec-label">Dichtheid</span><span class="spec-val">15–25</span><span class="spec-unit">kg/m³</span></div>
-            <div class="spec-card"><span class="spec-label">Brandgedrag</span><span class="spec-val text-oikos-green">Zelfblussend</span></div>
-          </div>
-
-          <div class="mb-8">
-            <p class="text-[10px] font-bold tracking-widest text-oikos-gray uppercase mb-3">Toepassingen</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="tag">Muurisolatie</span>
-              <span class="tag">Dakisolatie</span>
-              <span class="tag">Vloer &amp; kruipruimte</span>
-              <span class="tag">Tussenspouw</span>
-            </div>
-          </div>
-
-          <div class="mb-4">
-            <p class="text-[10px] font-bold tracking-widest text-oikos-gray uppercase mb-3">Eigenschappen</p>
-            <ul class="space-y-2 text-sm text-oikos-gray">
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Uitstekende vochtregulering zonder verlies van isolatiewaarde</li>
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Moeilijk ontvlambaar en zelfblussend — vormt geen brandbaar smeltend materiaal</li>
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Goede geluidsabsorptie door de open vezelstructuur</li>
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Volledig biologisch afbreekbaar en hernieuwbaar</li>
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Bevat lanoline, een natuurlijke stof met pestwerende werking</li>
-            </ul>
-          </div>
-
-          <div class="tekeningen-section mt-8 border-t border-gray-100 pt-6">
-            <button class="tekeningen-toggle flex items-center gap-2 text-sm text-oikos-gray hover:text-oikos-dark transition-colors">
-              <svg class="h-4 w-4 tekeningen-arrow transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-              <span class="font-semibold">Bouwtechnische tekeningen</span>
-            </button>
-            <div class="tekeningen-panel hidden mt-4">
-              <p class="text-oikos-gray text-sm leading-relaxed">Bouwtechnische tekeningen worden hier toegevoegd zodra ze beschikbaar zijn.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- ── Cellulose ── -->
-        <div id="panel-cellulose" class="mat-panel hidden">
-          <p class="text-oikos-green text-xs font-bold tracking-widest uppercase mb-1">Gerecycled papier</p>
-          <h2 class="text-3xl font-extrabold text-oikos-dark mb-2">Cellulose</h2>
-          <p class="text-oikos-gray text-sm mb-6 leading-relaxed max-w-xl">
-            Cellulose-isolatie wordt gemaakt van gerecycled papier — voornamelijk kranten — dat wordt vermalen en behandeld met boraxzouten. Die behandeling zorgt voor brandwerendheid en weerstand tegen schimmels en insecten. Het materiaal wordt ingeblazen in bestaande constructies, wat het bijzonder geschikt maakt voor renovaties waar je niet alles wilt openbreken.
-          </p>
-
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-            <div class="spec-card"><span class="spec-label">λ-waarde</span><span class="spec-val">0,037–0,042</span><span class="spec-unit">W/mK</span></div>
-            <div class="spec-card"><span class="spec-label">Dichtheid (ingeblazen)</span><span class="spec-val">30–60</span><span class="spec-unit">kg/m³</span></div>
-            <div class="spec-card"><span class="spec-label">Herkomst</span><span class="spec-val text-sm font-semibold leading-tight">Gerecycled papier</span></div>
-            <div class="spec-card"><span class="spec-label">Dampopen</span><span class="spec-val text-oikos-green">Ja</span></div>
-          </div>
-
-          <div class="mb-8">
-            <p class="text-[10px] font-bold tracking-widest text-oikos-gray uppercase mb-3">Toepassingen</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="tag">Inblaas spouwmuur</span>
-              <span class="tag">Plat dak</span>
-              <span class="tag">Vloer</span>
-              <span class="tag">Zoldervloer</span>
-            </div>
-          </div>
-
-          <div class="mb-4">
-            <p class="text-[10px] font-bold tracking-widest text-oikos-gray uppercase mb-3">Eigenschappen</p>
-            <ul class="space-y-2 text-sm text-oikos-gray">
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Geschikt voor inblazen zonder openen van constructie — ideaal bij renovatie</li>
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Brandvertragend door boraxbehandeling (Euroklasse B of C, afhankelijk van product)</li>
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Hogere dichtheid dan glaswol geeft betere geluidsisolatie</li>
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Goede thermische massa: vertraagt warmteoverdracht door de constructie</li>
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Laagste grijze energie van de gangbare isolatiematerialen</li>
-            </ul>
-          </div>
-
-          <div class="tekeningen-section mt-8 border-t border-gray-100 pt-6">
-            <button class="tekeningen-toggle flex items-center gap-2 text-sm text-oikos-gray hover:text-oikos-dark transition-colors">
-              <svg class="h-4 w-4 tekeningen-arrow transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-              <span class="font-semibold">Bouwtechnische tekeningen</span>
-            </button>
-            <div class="tekeningen-panel hidden mt-4">
-              <p class="text-oikos-gray text-sm leading-relaxed">Bouwtechnische tekeningen worden hier toegevoegd zodra ze beschikbaar zijn.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- ── Houtvezel ── -->
-        <div id="panel-houtvezel" class="mat-panel hidden">
-          <p class="text-oikos-green text-xs font-bold tracking-widest uppercase mb-1">Biobased hout</p>
-          <h2 class="text-3xl font-extrabold text-oikos-dark mb-2">Houtvezel</h2>
-          <p class="text-oikos-gray text-sm mb-6 leading-relaxed max-w-xl">
-            Houtvezelisolatie wordt geproduceerd uit reststromen van de Europese houtindustrie — rondhoutresten, zaagsel en spaanders die anders verbrand zouden worden. Via een nat of droog procedé worden de vezels samengeperst tot platen, matten of los materiaal voor inblazen. Houtvezel heeft een hoge thermische massa, wat het bij uitstek geschikt maakt als zomers hitteschild.
-          </p>
-
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-            <div class="spec-card"><span class="spec-label">λ-waarde</span><span class="spec-val">0,038–0,042</span><span class="spec-unit">W/mK</span></div>
-            <div class="spec-card"><span class="spec-label">Faseverschuiving</span><span class="spec-val">8–12</span><span class="spec-unit">uur</span></div>
-            <div class="spec-card"><span class="spec-label">Dichtheid</span><span class="spec-val">40–220</span><span class="spec-unit">kg/m³</span></div>
-            <div class="spec-card"><span class="spec-label">CO₂</span><span class="spec-val text-oikos-green">Opgeslagen</span></div>
-          </div>
-
-          <div class="mb-8">
-            <p class="text-[10px] font-bold tracking-widest text-oikos-gray uppercase mb-3">Toepassingen</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="tag">Hellend dak</span>
-              <span class="tag">Gevelbekleding</span>
-              <span class="tag">Vloerisolatie</span>
-              <span class="tag">Plat dak</span>
-              <span class="tag">Inblaas spouwmuur</span>
-            </div>
-          </div>
-
-          <div class="mb-4">
-            <p class="text-[10px] font-bold tracking-widest text-oikos-gray uppercase mb-3">Eigenschappen</p>
-            <ul class="space-y-2 text-sm text-oikos-gray">
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Hoge thermische massa: beschermt tegen oververhitting in de zomer</li>
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Volledig dampdoorlatend — ademt mee met de constructie</li>
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Leverbaar als rigide plaat, semi-rigide mat of inblaasmateriaal</li>
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> CO₂ opgeslagen in de vezel gedurende de hele levensduur</li>
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Goede geluidsabsorptie door de compacte vezelstructuur</li>
-            </ul>
-          </div>
-
-          <div class="tekeningen-section mt-8 border-t border-gray-100 pt-6">
-            <button class="tekeningen-toggle flex items-center gap-2 text-sm text-oikos-gray hover:text-oikos-dark transition-colors">
-              <svg class="h-4 w-4 tekeningen-arrow transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-              <span class="font-semibold">Bouwtechnische tekeningen</span>
-            </button>
-            <div class="tekeningen-panel hidden mt-4">
-              <p class="text-oikos-gray text-sm leading-relaxed">Bouwtechnische tekeningen worden hier toegevoegd zodra ze beschikbaar zijn.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- ── Isovlas ── -->
-        <div id="panel-isovlas" class="mat-panel hidden">
-          <p class="text-oikos-green text-xs font-bold tracking-widest uppercase mb-1">Plantvezels</p>
-          <h2 class="text-3xl font-extrabold text-oikos-dark mb-2">Isovlas</h2>
-          <p class="text-oikos-gray text-sm mb-6 leading-relaxed max-w-xl">
-            Vlasisolatie wordt gemaakt van de lijnvezels van de vlasbloem (<em>Linum usitatissimum</em>), een gewas dat al eeuwen in de Lage Landen wordt geteeld. De vezels worden gesponnen en verwerkt tot isolatiematten. Voor mechanische stabiliteit wordt vaak een klein percentage gerecycled polyestervezel (±15%) toegevoegd. Het materiaal is volledig dampdoorlatend en reguleert vocht op een vergelijkbare manier als schapenwol.
-          </p>
-
-          <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-8">
-            <div class="spec-card"><span class="spec-label">λ-waarde</span><span class="spec-val">0,035–0,040</span><span class="spec-unit">W/mK</span></div>
-            <div class="spec-card"><span class="spec-label">Dichtheid</span><span class="spec-val">20–35</span><span class="spec-unit">kg/m³</span></div>
-            <div class="spec-card"><span class="spec-label">Herkomst</span><span class="spec-val text-sm font-semibold leading-tight">Europese vlasteelt</span></div>
-            <div class="spec-card"><span class="spec-label">Dampopen</span><span class="spec-val text-oikos-green">Ja</span></div>
-          </div>
-
-          <div class="mb-8">
-            <p class="text-[10px] font-bold tracking-widest text-oikos-gray uppercase mb-3">Toepassingen</p>
-            <div class="flex flex-wrap gap-2">
-              <span class="tag">Muurisolatie</span>
-              <span class="tag">Dakisolatie</span>
-              <span class="tag">Vloerisolatie</span>
-              <span class="tag">Binnenwanden</span>
-            </div>
-          </div>
-
-          <div class="mb-4">
-            <p class="text-[10px] font-bold tracking-widest text-oikos-gray uppercase mb-3">Eigenschappen</p>
-            <ul class="space-y-2 text-sm text-oikos-gray">
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Goede vochtregulering — neemt vocht op en geeft het geleidelijk af</li>
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Laag primair energieverbruik in de productie (lage grijze energie)</li>
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Ankervrij en makkelijk verwerken: scherp en op maat te snijden</li>
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Kortere transportafstanden door Europese teelt en productie</li>
-              <li class="flex gap-2"><span class="text-oikos-green font-bold flex-shrink-0">—</span> Let op: voor structurele stabiliteit bevat vlasisolatie doorgaans ±15% gerecycled polyester</li>
-            </ul>
-          </div>
-
-          <div class="tekeningen-section mt-8 border-t border-gray-100 pt-6">
-            <button class="tekeningen-toggle flex items-center gap-2 text-sm text-oikos-gray hover:text-oikos-dark transition-colors">
-              <svg class="h-4 w-4 tekeningen-arrow transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
-              <span class="font-semibold">Bouwtechnische tekeningen</span>
-            </button>
-            <div class="tekeningen-panel hidden mt-4">
-              <p class="text-oikos-gray text-sm leading-relaxed">Bouwtechnische tekeningen worden hier toegevoegd zodra ze beschikbaar zijn.</p>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
 
       </div>
     </div>
