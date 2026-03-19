@@ -29,8 +29,73 @@
   <style>
     html { scroll-behavior: smooth; }
     .hero-overlay {
-      background: linear-gradient(105deg, rgba(60,60,60,0.88) 40%, rgba(60,60,60,0.35) 100%);
+      background: linear-gradient(180deg, rgba(30,30,30,0.45) 0%, rgba(30,30,30,0.60) 60%, rgba(30,30,30,0.80) 100%);
     }
+    .hero-slides { position: absolute; inset: 0; }
+    .hero-slide {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+    .hero-slide.active { opacity: 1; }
+    /* Bronverwijzing inline uitklapper */
+    .bron-marker {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 1.5px solid #8DC63F;
+      color: #8DC63F;
+      font-size: 0.6rem;
+      font-weight: 700;
+      vertical-align: middle;
+      cursor: pointer;
+      margin: 0 2px;
+      transition: background 0.2s, color 0.2s;
+      user-select: none;
+      line-height: 1;
+    }
+    .bron-marker.open,
+    .bron-marker:hover {
+      background: #8DC63F;
+      color: white;
+    }
+    .bron-card-wrap {
+      display: block;
+      overflow: hidden;
+      max-height: 0;
+      transition: max-height 0.35s ease, opacity 0.3s ease;
+      opacity: 0;
+    }
+    .bron-card-wrap.open {
+      max-height: 200px;
+      opacity: 1;
+    }
+    .bron-card {
+      display: block;
+      background: #f8f9fa;
+      border-radius: 12px;
+      padding: 14px 18px;
+      margin: 10px 0 6px 0;
+      font-size: 0.875rem;
+      color: #6B6B6B;
+      line-height: 1.6;
+      border: 1px solid #e8e8e8;
+    }
+    .bron-card a {
+      color: #8DC63F;
+      text-decoration: underline;
+    }
+    .typewriter-cursor {
+      display: inline-block;
+      color: #8DC63F;
+      font-weight: 300;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
     .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
     .card-hover:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(0,0,0,0.10); }
     .section-tag {
@@ -121,20 +186,22 @@
 <body class="bg-white text-oikos-dark font-sans antialiased">
 
   <!-- ===== NAVIGATIE ===== -->
-  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/96 backdrop-blur-sm">
+  <nav id="main-nav" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
     <div class="max-w-6xl mx-auto px-6 py-1 md:py-4 flex items-center justify-between">
-      <a href="/">
-        <img src="/assets/logo-voorzijde.png" alt="Oikos Bouwend Bureau" class="h-16 w-auto" />
+      <a href="/" class="relative block h-10 w-10">
+        <!-- Wit+groen logo (zichtbaar op hero) -->
+        <img id="logo-light" src="/assets/img/logo-hart-wit-groen.png" alt="Oikos Bouwend Bureau" class="h-10 w-auto absolute top-0 left-0 transition-opacity duration-500" />
+        <!-- Donker+groen logo (zichtbaar op witte achtergrond) -->
+        <img id="logo-dark"  src="/assets/img/logo-hart-transparant.png" alt="Oikos Bouwend Bureau" class="h-10 w-auto absolute top-0 left-0 transition-opacity duration-500 opacity-0" />
       </a>
       <div class="hidden md:flex items-center gap-8">
-        <a href="/"           class="text-gray-900 hover:text-oikos-green transition-colors text-sm font-semibold">Home</a>
-        <a href="/#projecten" class="text-gray-900 hover:text-oikos-green transition-colors text-sm font-semibold">Projecten & nieuws</a>
-        <a href="/materialen/" class="text-gray-900 hover:text-oikos-green transition-colors text-sm font-semibold">Materialen</a>
-        <a href="/#over-ons"  class="text-gray-900 hover:text-oikos-green transition-colors text-sm font-semibold">Over ons</a>
-        <a href="/#diensten"  class="text-gray-900 hover:text-oikos-green transition-colors text-sm font-semibold">Diensten</a>
+        <a href="/"           class="nav-link transition-colors duration-300 text-sm font-semibold hover:text-oikos-green">Home</a>
+        <a href="/#projecten" class="nav-link transition-colors duration-300 text-sm font-semibold hover:text-oikos-green">Projecten & nieuws</a>
+        <a href="/materialen/" class="nav-link transition-colors duration-300 text-sm font-semibold hover:text-oikos-green">Materialen</a>
+        <a href="/#over-ons"  class="nav-link transition-colors duration-300 text-sm font-semibold hover:text-oikos-green">Over ons</a>
         <a href="/#contact"   class="bg-oikos-green hover:bg-oikos-green-dark text-white px-5 py-2.5 rounded-full text-sm font-semibold transition-colors">Contact</a>
       </div>
-      <button id="mobile-menu-btn" class="md:hidden text-oikos-dark" aria-label="Menu">
+      <button id="mobile-menu-btn" class="md:hidden transition-colors duration-300" aria-label="Menu">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
         </svg>
@@ -145,7 +212,6 @@
       <a href="/#projecten" class="text-gray-900 hover:text-oikos-green">Projecten & nieuws</a>
       <a href="/materialen/" class="text-gray-900 hover:text-oikos-green">Materialen</a>
       <a href="/#over-ons"  class="text-gray-900 hover:text-oikos-green">Over ons</a>
-      <a href="/#diensten"  class="text-gray-900 hover:text-oikos-green">Diensten</a>
       <a href="/#contact"   class="bg-oikos-green text-white px-5 py-2.5 rounded-full text-center font-semibold">Contact</a>
     </div>
   </nav>
@@ -153,11 +219,12 @@
   <!-- ===== PAGINA-INHOUD ===== -->
   {{ content | safe }}
 
+  {% if page.url != '/' %}
   <!-- ===== CTA BANNER ===== -->
-  <section class="bg-oikos-green py-20">
+  <section class="bg-oikos-green py-14 md:py-20">
     <div class="max-w-4xl mx-auto px-6 text-center fade-up">
-      <h2 class="text-4xl font-extrabold text-white mb-5">Jouw woning klaar voor 2050?</h2>
-      <p class="text-white/85 text-xl mb-10 leading-relaxed max-w-2xl mx-auto">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-white mb-5">Jouw woning klaar voor 2050?</h2>
+      <p class="text-white/85 text-base md:text-xl mb-7 md:mb-10 leading-relaxed max-w-2xl mx-auto">
         Oikos werkt samen met enthousiaste woningeigenaren aan een duurzame toekomst.
         Neem contact op voor een vrijblijvend gesprek.
       </p>
@@ -166,50 +233,65 @@
       </a>
     </div>
   </section>
+  {% endif %}
 
   <!-- ===== FOOTER ===== -->
   <footer id="contact" class="bg-oikos-dark text-white py-20">
     <div class="max-w-6xl mx-auto px-6">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-10 mb-16">
 
-        <div>
-          <div class="inline-block bg-white/10 rounded-xl p-3 mb-5">
-            <img src="/assets/logo.png" alt="Oikos Bouwend Bureau" class="h-16 w-auto" />
-          </div>
+        <div class="col-span-2 md:col-span-1">
+          <img src="/assets/img/logo-hart-wit-groen.png" alt="Oikos Bouwend Bureau" class="h-14 w-auto mb-5 opacity-90" />
           <p class="text-gray-400 text-sm leading-relaxed">
-            Duurzame renovatie met hennepvezels. Wij maken woningen klaar voor de toekomst.
+            Duurzame renovatie met biobased materialen. Wij maken woningen klaar voor de toekomst.
           </p>
+          <div class="mt-4">
+            <a href="mailto:info@bureau-oikos.nl" class="text-gray-400 hover:text-oikos-green transition-colors text-sm">info@bureau-oikos.nl</a>
+          </div>
         </div>
 
         <div>
-          <h4 class="font-semibold text-white mb-5 tracking-wide text-sm uppercase">Contact</h4>
+          <h4 class="font-semibold text-white mb-5 tracking-wide text-xs uppercase">Guido Bouwman</h4>
           <ul class="space-y-3 text-gray-400 text-sm">
-            <li class="flex items-start gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-0.5 text-oikos-green flex-shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
-              <a href="mailto:info@bureau-oikos.nl" class="hover:text-oikos-green transition-colors">info@bureau-oikos.nl</a>
+            <li>
+              <a href="mailto:guido@bureau-oikos.nl" class="hover:text-oikos-green transition-colors">guido@bureau-oikos.nl</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/guido-bouwman-7ab306146/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 hover:text-oikos-green transition-colors">
+                <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                LinkedIn
+              </a>
             </li>
           </ul>
         </div>
 
         <div>
-          <h4 class="font-semibold text-white mb-5 tracking-wide text-sm uppercase">Navigatie</h4>
+          <h4 class="font-semibold text-white mb-5 tracking-wide text-xs uppercase">Thom</h4>
+          <ul class="space-y-3 text-gray-400 text-sm">
+            <li>
+              <a href="mailto:thom@bureau-oikos.nl" class="hover:text-oikos-green transition-colors">thom@bureau-oikos.nl</a>
+            </li>
+            <li class="text-gray-600 text-xs italic">LinkedIn volgt</li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-white mb-5 tracking-wide text-xs uppercase">Navigatie</h4>
           <ul class="space-y-2 text-gray-400 text-sm">
             <li><a href="/#over-ons"  class="hover:text-oikos-green transition-colors">Over Oikos</a></li>
-            <li><a href="/#diensten"  class="hover:text-oikos-green transition-colors">Diensten</a></li>
-            <li><a href="/#materiaal" class="hover:text-oikos-green transition-colors">Materiaal</a></li>
+            <li><a href="/materialen/" class="hover:text-oikos-green transition-colors">Materialen</a></li>
             <li><a href="/#projecten" class="hover:text-oikos-green transition-colors">Projecten</a></li>
-            <li><a href="/#nieuws"    class="hover:text-oikos-green transition-colors">Nieuws</a></li>
+            <li><a href="/#contact"   class="hover:text-oikos-green transition-colors">Contact</a></li>
           </ul>
         </div>
 
       </div>
-      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-gray-500 text-xs">
+      <div class="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-gray-500 text-xs">
         <p>© 2025 Oikos, Bouwend Bureau. Alle rechten voorbehouden.</p>
-        <a href="https://www.linkedin.com/in/guido-bouwman-7ab306146/" target="_blank" rel="noopener"
-           class="flex items-center gap-2 hover:text-oikos-green transition-colors">
-          <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-          LinkedIn
-        </a>
+        <span class="flex items-center gap-2">
+          <span class="text-gray-600">Website gebouwd door</span>
+          <a href="https://flow-company.nl" target="_blank" rel="noopener" class="text-oikos-green hover:text-white transition-colors font-semibold tracking-wide">flow-company.nl ↗</a>
+        </span>
       </div>
     </div>
   </footer>
@@ -229,6 +311,56 @@
     window.addEventListener('scroll', function() {
       mobileMenu.classList.add('hidden');
     }, { passive: true });
+
+    // Nav: transparant op hero, wit als je scrollt
+    const nav = document.getElementById('main-nav');
+    const logoLight = document.getElementById('logo-light');
+    const logoDark  = document.getElementById('logo-dark');
+    const navLinks  = document.querySelectorAll('.nav-link');
+    const menuBtn   = document.getElementById('mobile-menu-btn');
+    const isHome    = document.querySelector('#home') !== null;
+
+    function setNavState(onHero) {
+      if (onHero) {
+        nav.style.background = 'transparent';
+        nav.style.backdropFilter = 'none';
+        logoLight.style.opacity = '1';
+        logoDark.style.opacity  = '0';
+        navLinks.forEach(l => l.style.color = 'rgba(255,255,255,0.90)');
+        menuBtn.style.color = 'white';
+      } else {
+        nav.style.background = 'rgba(255,255,255,0.96)';
+        nav.style.backdropFilter = 'blur(8px)';
+        logoLight.style.opacity = '0';
+        logoDark.style.opacity  = '1';
+        navLinks.forEach(l => l.style.color = '#1a1a1a');
+        menuBtn.style.color = '#3C3C3C';
+      }
+    }
+
+    const sections = document.querySelectorAll('[data-nav-bg]');
+    if (sections.length > 0) {
+      // Volg welke sectie bovenaan staat
+      const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const bg    = entry.target.dataset.navBg;
+            const theme = entry.target.dataset.navTheme;
+            const onLight = (theme === 'dark');
+            nav.style.background = bg === 'transparent' ? 'transparent' : bg;
+            nav.style.backdropFilter = bg === 'transparent' ? 'none' : 'blur(8px)';
+            logoLight.style.opacity = onLight ? '0' : '1';
+            logoDark.style.opacity  = onLight ? '1' : '0';
+            navLinks.forEach(l => l.style.color = onLight ? '#1a1a1a' : 'rgba(255,255,255,0.90)');
+            menuBtn.style.color = onLight ? '#3C3C3C' : 'white';
+          }
+        });
+      }, { threshold: 0, rootMargin: '-50px 0px -80% 0px' });
+      sections.forEach(s => sectionObserver.observe(s));
+    } else {
+      // Niet-homepage: altijd wit
+      setNavState(false);
+    }
 
     // Scroll-driven animations
     const io = new IntersectionObserver((entries) => {
@@ -266,6 +398,43 @@
           });
         }
       });
+    }
+
+    // Typewriter effect
+    const tw = document.getElementById('hero-typewriter');
+    if (tw) {
+      const phrases = [
+        'Wij maken woningen gezond en energiezuinig.',
+        'Biobased isolatie voor woningen die écht beter worden.',
+        'Van eerste gesprek tot opgeleverd resultaat.'
+      ];
+      let pi = 0, ci = 0, deleting = false;
+      function type() {
+        const phrase = phrases[pi];
+        if (!deleting) {
+          tw.textContent = phrase.slice(0, ci + 1);
+          ci++;
+          if (ci === phrase.length) { deleting = true; setTimeout(type, 2200); return; }
+          setTimeout(type, 55);
+        } else {
+          tw.textContent = phrase.slice(0, ci - 1);
+          ci--;
+          if (ci === 0) { deleting = false; pi = (pi + 1) % phrases.length; setTimeout(type, 400); return; }
+          setTimeout(type, 28);
+        }
+      }
+      setTimeout(type, 800);
+    }
+
+    // Hero slideshow
+    const slides = document.querySelectorAll('.hero-slide');
+    if (slides.length > 1) {
+      let current = 0;
+      setInterval(() => {
+        slides[current].classList.remove('active');
+        current = (current + 1) % slides.length;
+        slides[current].classList.add('active');
+      }, 5000);
     }
   </script>
 </body>

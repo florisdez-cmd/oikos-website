@@ -21,7 +21,7 @@ layout: base.njk
     </div>
     {% endif %}
 
-    <div class="text-oikos-gray leading-relaxed text-lg space-y-5
+    <div class="post-content text-oikos-gray leading-relaxed text-lg space-y-5
                 [&_h2]:text-oikos-dark [&_h2]:font-bold [&_h2]:text-2xl [&_h2]:mt-10 [&_h2]:mb-4
                 [&_h3]:text-oikos-dark [&_h3]:font-semibold [&_h3]:mt-8 [&_h3]:mb-3
                 [&_a]:text-oikos-green [&_a]:underline
@@ -30,5 +30,73 @@ layout: base.njk
       {{ content | safe }}
     </div>
 
+    {% if map_url %}
+    <div class="mt-12">
+      <p class="text-oikos-green text-xs font-bold tracking-widest uppercase mb-3">Locatie</p>
+      {% if map_label %}<p class="text-oikos-dark font-semibold mb-3">{{ map_label }}</p>{% endif %}
+      <div class="rounded-2xl overflow-hidden border border-gray-100 aspect-video">
+        <iframe src="{{ map_url }}" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+    {% endif %}
+
+
   </div>
 </main>
+
+{% if bronnen and bronnen.length > 0 %}
+<script>
+(function() {
+  var bronnen = {{ bronnen | dump | safe }};
+  var bronMap = {};
+  bronnen.forEach(function(b) { bronMap[b.nr] = b; });
+
+  var contentEl = document.querySelector('.post-content');
+  if (!contentEl) return;
+
+  // Vervang [N] door inline marker + uitklapkaart
+  // Werkt op paragraaf-niveau zodat de kaart buiten de <p> valt
+  contentEl.querySelectorAll('p').forEach(function(p) {
+    if (!/\[\d+\]/.test(p.innerHTML)) return;
+    var wrapper = document.createElement('span');
+    wrapper.innerHTML = p.innerHTML.replace(/\[(\d+)\]/g, function(_, nr) {
+      var b = bronMap[parseInt(nr)];
+      if (!b) return '[' + nr + ']';
+      var link = b.url
+        ? '<a href="' + b.url + '" target="_blank" rel="noopener">' + b.titel + '</a>'
+        : b.titel;
+      var id = 'bron-' + nr + '-' + Math.random().toString(36).slice(2,6);
+      return '<button class="bron-marker" data-card="' + id + '" aria-expanded="false">' +
+               '<svg width="8" height="8" viewBox="0 0 8 8" fill="none" style="display:block"><path d="M4 1v6M1 4l3 3 3-3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+             '</button>' +
+             '<span class="bron-card-wrap" id="' + id + '">' +
+               '<span class="bron-card">' + link + '</span>' +
+             '</span>';
+    });
+    p.innerHTML = wrapper.innerHTML;
+  });
+
+  // Klik-handler
+  contentEl.addEventListener('click', function(e) {
+    var btn = e.target.closest('.bron-marker');
+    if (!btn) return;
+    var cardId = btn.dataset.card;
+    var card = document.getElementById(cardId);
+    var isOpen = card.classList.contains('open');
+
+    // Sluit alle andere kaarten
+    document.querySelectorAll('.bron-card-wrap.open').forEach(function(c) {
+      c.classList.remove('open');
+      var b = document.querySelector('[data-card="' + c.id + '"]');
+      if (b) { b.classList.remove('open'); b.setAttribute('aria-expanded','false'); }
+    });
+
+    if (!isOpen) {
+      card.classList.add('open');
+      btn.classList.add('open');
+      btn.setAttribute('aria-expanded','true');
+    }
+  });
+})();
+</script>
+{% endif %}

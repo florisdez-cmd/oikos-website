@@ -53,3 +53,33 @@ collections:
         name: "body"
         widget: "markdown"
         hint: "De volledige tekst van het bericht. Gebruik ## voor tussenkopjes."
+
+      - label: "Locatie op kaart"
+        name: "map_url"
+        widget: "string"
+        required: false
+        hint: "Plak hier een Google Maps embed-link. Ga naar maps.google.com → zoek adres → Delen → Kaart insluiten → kopieer de src-link (begint met https://www.google.com/maps/embed?...)"
+
+      - label: "Locatienaam"
+        name: "map_label"
+        widget: "string"
+        required: false
+        hint: "Bijv. 'Den Haag, Archipelbuurt' — wordt onder de kaart getoond"
+
+      - label: "Bronnen"
+        name: "bronnen"
+        widget: "list"
+        required: false
+        hint: "Voeg bronnen toe die onderaan het bericht worden getoond. Verwijs in je tekst naar [1], [2] etc."
+        fields:
+          - label: "Nummer"
+            name: "nr"
+            widget: "number"
+            value_type: "int"
+          - label: "Omschrijving / titel"
+            name: "titel"
+            widget: "string"
+          - label: "URL (optioneel)"
+            name: "url"
+            widget: "string"
+            required: false
